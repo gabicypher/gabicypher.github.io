@@ -1,0 +1,1139 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fffcf5;
+  background-image: url("https://gabiseifert.neocities.org/media/backgroundtiles.png");
+}
+
+h1, h2, h3, h4, h5, h6 {font-family: 'Courier New', Courier, monospace;}
+
+
+a {color: #cd7722;} /* make the links a different color */
+
+::selection {
+  color: black;
+  background: #ffd300; /* text highlights orange */
+}
+
+/* Create navigation bar */
+.tophead {
+  overflow: hidden;
+  flex-wrap: nowrap;
+  font-family:'Courier New', Courier, monospace;
+  z-index: 10;
+}
+
+.topname {
+  position: absolute;
+  float: left;
+  padding: 0px; /* padding top/bottom then l/r */
+  color: #260a30;
+  font-size: 150%;
+}
+
+/* set the header images as tall as the bar */
+.topname img {
+  height: 78px;
+  width: auto;
+  padding: 0px;
+}
+
+.tophead u1 {
+  list-style-type: none;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  top: 0;
+}
+
+.tophead li a {
+  position: relative;
+  float: right;
+  display: block;
+  color: #260a30; /* this specifies text color */
+  text-align: center;
+  padding: 30px 16px; /* padding top/bottom then l/r */
+  text-decoration: none;
+  background-color: #ffd300; /* background color of boxes, no hover */
+}
+
+.tophead li a:hover:not(.active) {
+  background-color: #f9a602; /* color when moused over */
+}
+
+.tophead .active {
+  background-color: #13af89; /* color when clicked on */
+  font-weight: 900;
+}
+
+.tophead .navbar a:hover {
+  color: #260a30; /* text color */
+}
+
+/* Responsive layout - when the screen is less than 450px wide, the nav links stack on top of instead of next to each other */
+@media only screen and (max-width: 450px) {
+  .tophead a {
+    float: none;
+    width: 100%;
+    display: block;
+    position: relative;
+  }
+  .tophead li a {
+      padding: 10px 0px 10px 0px; /* make the links less tall */
+  }
+  .topname {
+  text-align: center; /* center align images */
+  }
+}
+
+/* Header */
+.header {
+  padding: 80px 50px;
+  position: relative;
+  text-align: right;
+  background-image: url("https://gabiseifert.neocities.org/header1.png");
+  background-size: cover;
+  color: #260a30;
+}
+
+/* Increase the font size of the header */
+.header h1 {
+  font-size: 100px;
+  margin: 0;
+}
+
+/* Header highlight */
+.highlighted {
+  background-color: rgba(233, 176, 64, .9);
+}
+
+/* Page Title */
+.titleline {
+  position: relative;
+  text-align: center;
+  z-index: 0;
+}
+
+.titleline img {
+  height: 100px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 450px) {
+  /* Make the header smaller on mobile */
+  .header {
+      padding: 70px 10px;
+  }
+  /* Make header font smaller on mobile */
+  .header h1 {
+  font-size: 20px;
+  }
+}
+
+/* ---------------------------------main content-------- */
+
+/* Column container */
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Main column */
+.main {
+  display: flex;
+  flex-direction: row; /* aligns items in a row next to each other */
+  flex-wrap: nowrap;
+  align-items: flex-start; /* aligns items at the top of the page */
+  padding: 20px 50px;
+  color:#260a30;
+  position: relative;
+}
+
+/* Left side */
+.left { /* creates a left column of vertically aligned elements */
+  display: flex;
+  flex-direction: column;
+  position: sticky; /* makes this stick at the top when scrolling */
+}
+
+.sticky {
+  flex: none; /* prevents this from being compressed */
+  float: left; /* sits at the left side of the page */
+  top: 20px;
+  padding: 0px 0px;
+  width: 288px;
+  background-image: url("https://gabiseifert.neocities.org/media/stickynote.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sticky .text {
+  padding: 20px 50px 50px 45px; /* t r b l */
+}
+
+/* paper scrap with contact info */
+.contact-note {
+  margin-top: 30px; /* leave space between post it and this */
+  padding: 0px 0px 0px 60px; /* t r b l */
+  background-image: url("https://gabiseifert.neocities.org/media/contact-note.png");
+  background-repeat: no-repeat;
+}
+
+.contact-note h4 {
+line-height: 12.5px; /* make the lines closer together */
+font-size: 15px;
+padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
+
+}
+
+.contact-note img {
+  position: absolute; /* this prevents icons from interfering with line spacing */
+  width: 17px;
+  vertical-align: middle; /* align to middle of text line */
+  margin: -3px 0px 0px -30px; /* t r b l, move these up a tad and 30px left of text start */
+}
+
+.contact-note a {
+  color: #260a30; /* links auto-color orange, so undo this */
+}
+
+.polaroid {
+  margin-top: 20px; /* leave space between contact note and this */
+  flex: none; /* prevents this from being compressed */
+  float: left; /* sits at the left side of the page */
+  padding: 0px 0px;
+  width: 288px;
+}
+
+.polaroid img {
+  width: 288px;
+}
+
+/* Main page center column */
+.centertext {
+  margin-top: 0px;
+  position: relative;
+  float: left;
+  top: 0px;
+  left: 40px;
+  right: 40px;
+  margin-right: 70px;
+  padding: 0; /* padding top right bottom left */
+}
+
+/* Main page center column subdivisions */
+.textchunk {
+  display: flex;
+  flex-direction: horizontal;
+}
+
+.point7wide {
+  width: 70%;
+}
+
+.point6wide {
+  width: 60%;
+}
+
+.point4wide {
+  width: 40%;
+}
+
+.point3wide {
+  width: 30%;
+}
+
+/* Keep images contained in the center column */
+.centertext img {
+  width: 100%;
+  margin: auto; /* horizontally center image */
+  display: block;
+}
+
+/* Video formatting for projects pages */
+.centertext iframe {
+  width: 100%; /* on small screens, fill 100% of the width */
+  max-width: 560px; /* on larger screens, cap out at 560px */
+  height: 315px;
+  margin-left: auto; /* center */
+  margin-right: auto;
+  display: block;
+}
+
+/* Right side */
+.right { /* creates a right column of vertically aligned elements */
+  display: flex;
+  flex-direction: column;
+  position: sticky; /* makes this stick at the top when scrolling */
+}
+
+/* Main page right sticky box */
+.box2 {
+  position: relative;
+  flex: none; /* prevents this from being compressed */
+  float: right; /* sits at the right side of the page */
+  padding: 0px 0px;
+  width: 288px;
+  background-image: url("https://gabiseifert.neocities.org/media/paperscrap.png");
+}
+
+.box2 .text {
+  padding: 35px 10px 10px 15px; /* t r b l */
+}
+
+.right .box2 img {
+  flex: none; /* prevents this from being compressed */
+  float: left; /* sits at the left side of the page */
+  padding: 0px 0px;
+  width: 250px;
+}
+
+/* Projects pages project tags */
+.project-tags {
+  margin-top: 30px;
+  width: 288px;
+  background-image: url("https://gabiseifert.neocities.org/media/paperscrap2.png");
+}
+
+.project-tags h3 {
+  padding-left: 50px;
+}
+
+.project-tags li {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+/* on screens less than 900px, main page elements stack */
+@media only screen and (max-width: 900px) {
+.main {
+    flex-direction: column; /* aligns items in a column on top of each other */
+    float: center;
+    padding: 20px;
+    margin: 0px;
+    top: 0px;
+  }
+.left {
+  flex-direction: row; /* aligns left column items in a row if possible */
+  flex-wrap: wrap; /* contact note goes below sticky note if no space */
+}
+  .sticky {
+    position: relative;
+    margin-right: 30px; /* leave space between sticky and contact notes */
+  }
+  .contact-note {
+    position: relative;
+    padding-right: 100px; /* need +right padding if not in column */
+  }
+  .centertext {
+      padding: 20px 0px 0px 0px;
+    left: 0px;
+    right: 0px;
+    margin-right: 0px;
+  }
+.box2 {
+      position: relative;
+    width: calc(100% - 50px); /* 100% minus 2*15px border and 2*10px padding */
+    padding: 0px 10px;
+    background-color: #ffbe00;
+    border: 15px solid #f8de7f;
+  }
+}
+
+/* Projects page grid */
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-item{
+  background-color: #f8de7f; /* box color */
+  text-align: center;
+  border-radius: 0px; /* round the lower corners of the project boxes */
+}
+
+.grid-item a {
+  color: #260a30; /* keep font color visible */
+  text-decoration: none; /* remove underlines from links */
+}
+
+/* Make the text size in boxes smaller & padded */
+.grid-item p {
+  font-size: 12px;
+  padding: 4px;
+  overflow-wrap: break-word;
+  background-color: transparent; /* undo highlighting */
+}
+
+.grid-item h3 {
+  padding: 4px;
+  overflow-wrap: break-word;
+}
+
+/* Keep the image confined in the grid cell */
+.grid-item img {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Project grid reduces to 3 wide on smaller screen */
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Project grid reduces to 2 wide on even smaller screen */
+@media only screen and (max-width: 1000px) {
+  .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Project grid increases to 3 wide with mobile layout of bars */
+@media only screen and (max-width: 900px) {
+  .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Project grid reduces to 2 wide with mobile layout of bars */
+@media only screen and (max-width: 600px) {
+  .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Project grid font reduces for small mobile */
+@media only screen and (max-width: 400px) {
+  .grid-container grid-item h3 {
+        font-size: 70%;
+  }
+}
+
+/* Projects articles image formatting */
+.singleimage img {
+  width: 70%;
+  max-width: 560px;
+}
+
+.doubleimage {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: horizontal; /* align items horizontally next to each other */
+}
+
+.doubleimage img {
+  width: 50%;
+  padding: 1px; /* add a tiny bit of spacing for small screens */
+  margin: 0; /* align via stretch */
+}
+
+.tripleimage {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: horizontal; /* align items horizontally next to each other */
+}
+
+.tripleimage img {
+  width: 33.33%;
+  max-width: 300px;
+  padding: 1px; /* add a tiny bit of spacing for small screens */
+  margin: 0; /* align via stretch */
+}
+
+.quadimage {
+  display: flex;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: horizontal; /* align items horizontally next to each other */
+}
+
+.quadimage img{
+  width: 25%;
+  padding: 1px; /* add a tiny bit of spacing for small screens */
+  margin: 0; /* align via stretch */
+}
+
+.projectcaption {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projectcaption p{
+  font-size: smaller;
+}
+
+/* sample image with caption for Browning Birds */
+.browningsample .card {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  list-style: none;
+  margin-bottom: 14px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.browningsample .card .details {
+  position: absolute;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition: bottom 0.1s ease;
+  background: rgba(232,232,229,.7);
+}
+.browningsample .card:hover .details {
+  bottom: 0;
+}
+.browningsample .card .details .birdlabel {
+  color: #000000;
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 0; /* t r b l */
+  margin-left: auto;
+  margin-right: auto;
+}
+.browningsample .details .birdlabel span {
+  font-size: 1.05rem;
+}
+.browningsample .card img {
+  width: 100%;
+}
+
+/* Articles image grid (used for newspaper illustration) */
+.image-grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr); /* two columns per row */
+  gap: 10px;
+}
+
+.image-grid-item{
+  background-color: #b1e4cd; /* box color */
+  text-align: center;
+}
+
+/* Keep the image confined in the grid cell */
+.image-grid-item img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.image-grid-item a {
+  color: #13af89; /* make links blue */
+}
+
+.image-grid-item h3 {
+  padding: 0px 10px 0px 10px; /* t r b l */
+}
+
+.image-grid-item h4 {
+  padding: 0px; /* t r b l */
+}
+/* End articles image grid */
+
+/* Figures with caption formatting */
+.captioned-figure {
+  margin-left: auto; /* center */
+  margin-right: auto;
+  width: 90%;
+  max-width: 500px;
+  background-color: #f8de7f;
+  border: 4px #ffbe00 solid;
+}
+
+.captioned-figure img {
+  width: 100%; /* images fill 100% of the element space */
+}
+
+.captioned-figure p {
+  margin: 0px;
+  padding: 10px;
+  background-color: #f8de7f; /* remove text highlight by matching background */
+  font-size: 12px;
+}
+/* End figures with caption formatting */
+
+/* Code snippet formatting */
+.code-snippet {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  background-color: rgb(93, 218, 203, 0.7);
+}
+
+.code-snippet p {
+  padding: 5px 20px 5px 20px; /* t r b l*/
+}
+
+/* Illustrations grid formatting */
+.illustrations {
+  width: 100%; /* fill entire column */
+  display: flex;
+  flex-wrap: wrap; /* break images into multiple lines rather than just one very long row */
+  background-image: url(https://gabiseifert.neocities.org/media/sketchbookbg.png);
+  background-size: 100%; /* set background image width to 100% */
+}
+
+.illustrations .card {
+  position: relative;
+  width: calc(200/520 * 100%); /* percent of horizontal space filled by one image */
+  padding: 0 0 calc(326/520 * 100%) 0; /* t r b l create the image height */
+  margin: calc(20/520 * 100%) calc(30/520 * 100%) calc(60/520 * 100%) calc(30/520 * 100%); /* t r b l set page spacing around images */
+  height: 0;
+}
+
+.illustrations img {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* contain */
+}
+
+.illustrations p {
+  position: absolute;
+  z-index: 100;
+  margin: 165% 0 0 0; /* t r b l */
+  background-color: transparent;
+  font-size: 24px;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* End illustrations grid formatting */
+
+/* Contact page form */
+/* Expand text input boxes size */
+.email-form .form-group {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 -1rem 1rem -1rem;
+}
+
+[class*="form-col"] {
+  flex: 0 1 100%;
+  padding: 0 1rem;
+}
+
+@media (min-width: 400px) {
+	.email-form .form-col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    }
+    
+    .email-form .form-col-8 {
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+    }
+    
+    .email-form .form-col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    }
+}
+
+.email-form input {
+  display: block;
+  width: 100%;
+}
+
+/* Expand textarea to full page width */
+.email-form textarea {
+	width: 100%;
+  resize: none;
+}
+
+/* Submit button */
+.email-form .btn-primary {
+	display: submit;
+  width: 100%;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+/* End contact page form */
+
+/* Footer */
+.footer {
+  padding: 20px 20px 180px 20px; /* t r b l*/
+  text-align: center;
+  background-image: url("https://gabiseifert.neocities.org/media/footer.png");
+  font-size: 12px;
+  position: relative;
+}
+
+/*--Music player css--*/
+.music-container {
+    display: flex;
+    flex-direction: column; /* align items vertically */
+    position: relative; 
+    box-sizing: border-box; /* include box borders in size calculation */
+    width: 288px;
+    border-style: solid; 
+    border-width: 3px; 
+    border-radius: 1px; 
+    background-image: url("https://gabiseifert.neocities.org/media/music-player/music-player-bg.png");
+    background-color: #fada5f; 
+    border-color: #df881e; 
+    text-align: center; 
+    align-items: center;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    margin: 0px;
+    margin-top: 20px; /* leave a little space over top */
+}
+
+/* top title of the music player */
+.music-container h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 30px;
+    color: #260a30;
+}
+
+/* album cover settings */
+.img-container {
+    box-sizing: border-box; /* include box borders in size calculation */
+    position: relative; /* position relative to other elements, like title */
+    padding: 10px 0px; /* some vertical space */
+    margin-left: auto; /* horizontally center image */
+    margin-right: auto;
+    z-index: 5;
+}
+
+.img-container::after { /* switch out album cover with song */
+    content: '';
+    background-image: '';
+}
+
+.img-container img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #13af89;
+}
+
+.chicken-gif {
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -190px;
+    z-index: 0;
+}
+
+/* Music info section */
+.music-info {
+    position: relative;
+}
+
+/* song name */
+.music-info h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #13af89;
+    background: #fffccf; 
+    width: 230px; 
+    z-index: 2; 
+    position: relative;
+}
+
+.music-details {
+    text-align: left; /* align artist and album left text left */
+    padding: 5px 0px; /* some vertical space */
+}
+
+/* song artist and album */
+.music-details p {
+    text-align: left;
+    display: inline;
+    color: #260a30;
+}
+
+/* Progress bar--unfilled part */
+.progress-container {
+    position: relative;
+    background-color: #260a30; /* color of the unfilled progress bar */
+    border-radius: 5px; /* how rounded are the progress bar corners */
+    height: 5px;
+    width: 230px; 
+    margin-left: auto; /* center bar */
+    margin-right: auto;
+    margin-top: 7px; /* add gap on top */
+}
+
+/* Progress bar--filled part */
+.progress {
+    position: relative;
+    background-color: #13af89;
+    object-fit: cover;
+    border-radius: 5px; /* how rounded are the corners--keep same as above */
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+    z-index: 2;
+}
+
+/* Time labels */
+.music-container p {
+    font-size: 14px;
+    color: #260a30;
+    margin: 0px;
+}
+
+/* Play/pause button, arrows container */
+.navigation {
+    display: flex;
+    position: relative; /* place below progress bar, relative */
+    align-items: center; /* center horizontally */
+    justify-content: center;
+    margin-top: 25px; /* move down somewhat */
+    margin-bottom: 0px;
+    z-index: 100;
+}
+
+/* Play/pause button, arrows */
+.action-btn {
+    background: none;
+    border: 0;
+    font-size: 40px; /* font size the same size as the button to create spacing */
+    padding: 0px 10px;
+    cursor: pointer;
+}
+
+/* Hide the hover elements automatically */
+.prev-hover {
+    position: absolute;
+    margin-left: -120px;
+    opacity: 0;
+}
+.play-hover {
+    position: absolute;
+    opacity: 0;
+}
+.next-hover {
+    position: absolute;
+    margin-left: 120px;
+    opacity: 0;
+}
+
+/* On hover, reveal hover elements */
+.prev-hover:hover {
+    opacity: 1;
+}
+.play-hover:hover {
+    opacity: 1;
+}
+.next-hover:hover {
+    opacity: 1;
+}
+
+/* Tracklist label */
+.music-container h3 {
+    position: relative; 
+    font-size: 16px; 
+    color: #260a30;
+}
+
+.playlist {
+    position: relative;
+    display: inline;
+    width: 230px;
+    height: 150px;
+    margin-left: auto; /* horizontally center tracklist box */
+    margin-right: auto;
+    margin-top: -10px; /* move up closer to the tracklist title */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #e9b040;
+    border: solid;
+    border-width: 2px;
+    border-color: #13af89;
+}
+
+.playlist ul {
+    width: 80%;
+    margin-top: 3px;
+    margin-left: -20px;
+    list-style-type: none;
+}
+
+.playlist li {
+    width: 80%;
+    margin-top: 8px;
+    margin-left: -20px;
+    list-style-type: none;
+    font-size: 12.5px;
+    width: 100%;
+    vertical-align: middle;
+    color: #260a30;
+    cursor: pointer;
+}
+
+.playlist li:hover {
+    background: rgba(205, 119, 34, 0.40);
+}
+
+.activeSong {
+    background: rgba(205, 119, 34, 0.66);
+}
+
+.trackDuration {
+    position: absolute; 
+    right: 5px;
+    margin-top: 3.5px;
+    font-size: 11px;
+    color: #260a30;
+}
+
+.trackInfo {
+    position: relative;
+    width: 90%;
+    align-items: left;
+    text-align: left;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+/* container for the chatbox and stickers */
+.chatbox {
+  position: relative;
+  margin-top: 30px;
+}
+
+/* little stickers on the chatbox */
+.chatbox-stickers {
+  position: absolute;
+  margin-top: -10px;
+  z-index: 100;
+}
+
+      /* Start chatbox code */
+/*
+Below you will be able to freely customize every aspect of the comment widget.
+Most aspects of the widget are 100% able to be customized in CSS, but for strong structural changes,
+you may have to edit the JavaScript file.
+
+These are all the classes and IDs at your disposal!
+Classes have a c- at the start and IDs have a c_
+You don't need every single one for a good theme, but I tried to give as many options as possible!
+*/
+/*
+Containers:
+  #c_widget - The container <div> for the entire widget
+  #c_inputArea - The wrapper <div> around the form
+  #c_container - The wrapper <div> around all the comments
+
+The input form:
+  #c_form - The whole input <form>
+  #c_widgetTitle - The <h2> title at the top of the form
+
+  .c-inputWrapper- All <div> wrappers for each label/input pair
+  .c-label - All <label>s
+  .c-input - All <input>s
+
+  #c_nameWrapper - The wrapper <div> for the name field
+  .c-nameLabel - The <label> for the name field
+  .c-nameInput - The <input> for the name field
+
+  #c_websiteWrapper - The wrapper <div> for the website field
+  .c-websiteLabel - The <label> for the website field
+  .c-websiteInput - The <input> for the website field
+
+  #c_textWrapper - The wrapper <div> for the text field
+  .c-textLabel - The <label> for the text field
+  .c-textInput - The <input> for the text field
+
+  #c_submitButton - The submit button (It's an <input> element with a type of "submit")
+  #c_replyingText - The text <span> that displays when a user is replying to a comment
+
+The comment section:
+  .c-comment - All comment <div>s
+  .c-reply - All reply <div>s (contained within parent comment <div>s)
+  .c-replyContainer - The wrapper <div> for all replies
+  .c-name - The name of the person submitting the comment/reply (an <h3> element)
+  .c-timestamp - The timestamp of when the comment/reply was made (a <span> element)
+  .c-site - The website linked at the top of the comment/reply (an <a> element)
+  .c-text - The actual text body of the comment/reply (a <p> element)
+  .c-replyButton - All reply <button>s
+  .c-expandButton - The <button>s to reveal/hide replies (These only show if s_collapsedReplies is set to true in the JS)
+  
+  #c_pagination - The <div> wrapper for the pagination at the bottom (Only shows if there's more than one page)
+  .c-paginationButton - Both left and right directional <button>s
+  #c_leftButton - The left <button>
+  #c_rightButton - The right <button>
+*/
+
+/* Main */
+/* #c_widget - The container <div> for the entire widget */
+#c_widget {
+box-sizing: border-box;
+height: 100%;
+width: 288px;
+overflow: auto;
+padding: 6px;
+background-color: #fffccf;
+border: 2px solid #13af89;
+font-family: 'Courier New';
+font-size: 14px;
+font-weight: bold;
+color: #260a30;
+}
+
+#c_widget button, #c_widget input[type=submit] {
+padding: 4px;
+font-family: 'Courier New';
+text-align: center;
+text-transform: uppercase;
+background-color: #fffccf;
+color: #260a30;
+border: 1px solid #260a30;
+}
+
+#c_widget button:hover, #c_widget input[type=submit]:hover {
+color: #13af89;
+border: 1px solid #260a30;
+cursor: pointer;
+}
+#c_widget button:disabled, #c_widget input[type=submit]:disabled {opacity: 60%;}
+#c_widget button:disabled:hover, #c_widget input[type=submit]:disabled:hover {
+color: #13af89;
+border: 1px solid #260a30;
+}
+
+/* Input section */
+#c_inputDiv {
+margin-bottom: 15px;
+padding: 10px;
+background-color: #fada5f;
+border: 2px solid #260a30;
+}
+
+#c_widgetTitle {
+margin: -10px;
+margin-bottom: 10px;
+padding: 8px;
+text-transform: uppercase;
+font-weight: bold;
+text-align: center;
+background-color: #fba45e;
+}
+
+.c-inputWrapper {
+display: block;
+text-align: right;
+}
+.c-input {
+padding: 4px;
+color: black;
+border: 1px solid #260a30;
+outline: none;
+}
+.c-input:focus {border: 1px solid #13af89;}
+
+.c-textInput {
+width: calc(100% - 10px);
+max-width: 900px;
+resize: none;
+}
+#c_submitButton {
+display: block; 
+margin-left: auto; 
+margin-right: 0;
+}
+#c_replyingText {
+color: #260a30;
+text-align: right;
+}
+
+/* Comment section */
+.c-comment {
+margin-bottom: 15px;
+padding: 10px;
+border: 2px solid #260a30;
+background-color: #fba45e; 
+font-weight: normal;
+}
+.c-reply {
+display: block;
+width: 90%;
+margin-bottom: 10px;
+margin-left: auto;
+margin-right: 0;
+padding: 10px;
+border: 2px solid #260a30;
+background-color: #fba45e; 
+font-weight: normal;
+}
+.c-reply:last-child {margin-bottom: 0;}
+.c-replyContainer {
+margin: -10px;
+margin-top: 10px;
+padding: 10px;
+background-color: #13af89;
+}
+
+.c-name {
+display: inline-block;
+margin: 0;
+margin-right: 10px;
+padding: 0 0 6px 0; /* t r b l add padding under name */
+text-transform: uppercase;
+font-weight: bold;
+}
+.c-site {
+text-transform: uppercase;
+text-decoration: none;
+color: #260a30;
+padding: 0 0 6px 0; /* t r b l add padding under website name */
+
+}
+.c-site:hover {color: #13af89;}
+.c-timestamp {
+float: right;
+opacity: 75%;
+}
+.c-text {
+margin: 0;
+margin-left: -10px;
+margin-right: -10px;
+padding: 10px;
+font-family: Verdana;
+font-size: 14px;
+text-align: justify;
+color: #260a30;
+background-color: #fada5f;
+}
+
+/* Pagination */
+#c_pagination {text-align: center;}
+.c-replyButton {
+margin-top: 10px;
+margin-right: 4px;
+}
+.c-expandButton {
+margin-top: 10px;
+margin-left: 4px;
+}
+.c-paginationButton {
+margin-right: 4px;
+margin-left: 4px;
+}
+
+/* End chatbox code */

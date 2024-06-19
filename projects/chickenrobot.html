@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Robot</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Chicken Robot</h1>
+          
+          <p>The chicken robot is a high-speed attack robot capable of following and attacking victims that I designed and built in 2022. (More realistically: the chicken robot is a remote-controlled robot that drives around and pecks people).</p>
+
+          <p>The chicken robot started as little more than a humble dream of violence and a final project for my Electronics Lab class at Scripps College. The first designs envisioned a two-wheeled robot controlled by a Bluetooth connection that used two motors to control its motion and a servo to move the head.</p>
+
+          <div class="singleimage">
+            <img src="https://i.postimg.cc/vHfYS8sc/first-chicken-design.png">
+          </div>
+          
+          <p>The initial chicken design.</p>
+
+          <p>The driving motors are powered by an L293D motor driver, which is controlled by an arduino. The arduino also controls the servo, and is connected to an HC-05 Bluetooth module, to allow the chicken to receive input from a phone.</p>
+
+          <div class="singleimage">
+            <img src="https://i.postimg.cc/3xh8MM89/circuit-diagram.png">
+          </div>
+
+          <p>In the end, my phone’s Bluetooth wasn’t powerful enough to control the chicken from any reasonable distance (my Bluetooth headphones often disconnected from my phone when the phone was in my pocket and the headphones on my head, so the chicken couldn’t maintain a connection with the phone when it was on the ground). Instead, I just connected the Arduino control pins to a long wire with a toggle control on the end.</p>
+
+          <p>To actually build the chicken, I started with a wood base that my friend Julienne helped me laser cut at the Harvey Mudd makerspace. This allowed me to easily mount the motors and wheels on the lower side and run the wires up to the upper section.</p>
+
+          <div class="doubleimage">
+            <img src="https://i.postimg.cc/VN6c1m39/IMG-20220429-223232.jpg">
+            <img src="https://i.postimg.cc/hG5RtNBk/IMG-20220502-182338.jpg">
+          </div>
+
+          <p>I first did all the wiring on a large breadboard just to make sure that everything worked. The circuit worked as expected, but the original servos weren’t powerful enough to control the head, so I switched to a better servo.</p>
+
+          <p>The new servo didn’t have a good mechanism for connecting to the head, so I designed an adapter in SCAD and 3D printed it.</p>
+
+          <div class="singleimage">
+            <img src="https://i.postimg.cc/K85Zx94b/head-design.jpg">
+          </div>
+
+          <p>I soldered the Arduino connects and cleaned up the rest of my wiring, and the body of the chicken robot was ready to go! (I removed the giant chicken head with a metal-tipped beak after my advisor suggested that it might threaten the health and safety of the electronics lab exhibition guests).</p>
+
+          <div class="singleimage">
+            <img src="https://i.postimg.cc/3wJ3RgDv/final-robot.jpg">
+          </div>
+
+          <p>To control the chicken’s movements, I wrote a control program in the Arduino Editor, which uses a variant of C++.</p>
+      </div>
+    
+      <div class="right">
+        <div class="captioned-figure" style="width: 288px;">
+          <img src="https://i.postimg.cc/tgSpVYhm/me-and-chicken-robot.jpg">
+          <p>Me and my chicken robot at the electronics lab exhibition in May 2022.</p>
+        </div>
+
+        <div class="project-tags">
+          <img src="https://gabiseifert.neocities.org/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://gabiseifert.neocities.org/media/chatbox-stickers.png" style="position: absolute; margin: 135px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Circuit design</li>
+            <li>Circuit building</li>
+            <li>3D printing</li>
+            <li>Coding</li>
+            <li>C++</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>

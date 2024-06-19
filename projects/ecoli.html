@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E. coli</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>E. coli</h1>
+          <h2>Summary</h2>
+          <p>Working with <a href=”https://www.sarahmarzen.com/”>Dr. Sarah Marzen</a> at Scripps College, I adapted a differential equation into Python to fit a model of E. coli predicting the chemical concentration of allolactose in its environment. I solved the differential equation in Python for a single input function, used the Euler approximation to solve it for a vector of functions, used regression analysis to predict all functions, and finally applied the virtual E. coli system to video prediction.</p>
+          <p><a href=”https://www.sciencedirect.com/science/article/abs/pii/S0303264723002824”>This work has been published in Biosystems.</a></p>
+
+          <h2>Full Review</h2>
+          <p>E. coli's preferred food source is glucose, but if glucose is absent, E. coli can consume other forms of sugar instead. To do this, it needs to produce the protein lactase by transcribing its lac operon gene. Ideally, the lac operon gene is only transcribed when glucose is absent so that extra energy isn't wasted on transcription. To optimize the production of lactase, E. coli should <em>predict</em> its environment rather than just <em>respond</em> to it.</p>
+          <p>Following the model of gene regulatory networks proposed by van Oudenaarden and others in their 2001 paper “Intrinsic noise in gene regulatory networks,” the state of the genetic system can be described at time t by the total number of mRNA molecules (j) that have been transcribed from the lac operon gene.</p>
+          <p>The mRNA transcribe at a rate of ⍺ per mRNA and degrade at a rate of β per mRNA.</p>
+          <p>The change in probability that there are j mRNA at time t (here, dp/dt) can be described with four components:</p>
+
+          <ol>
+            <li>The probability that one timestep dt ago, there were j-1 mRNA and one was transcribed</li>
+            <li>The probability that dt ago, there were j+1 mRNA and one degraded</li>
+            <li>The probability that in dt, one more mRNA will be transcribed</li>
+            <li>The probability that in dt, one mRNA will degrade</li>
+          </ol>
+
+          <p>This rate of mRNA transcription is described by the van Oudenaarden equation:</p>
+
+          <img src="https://gabiseifert.neocities.org/media/vano-eqn.png" alt="van Oudenaarden equation">
+
+          <p>I used this model of mRNA transcription in E. coli to predict simple function inputs, as well as more complex functions such as video input. To predict the E. coli response, I used the Euler approximation to solve the van Oudenaarden differential equation for a vector of functions, and then used regression analysis to predict the functions forward.</p>
+          <p>Figure 1, created in Python, graphs the probability of having j mRNA over time. Each line represents j mRNA, with 0 ≤ j ≤ 300. At time t=0, there is a 100% probability of 0 mRNA.</p>
+        
+          <div class="singleimage">
+            <img src="https://i.imgur.com/Vm0aShZ.png">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 1: mRNA Production Over Time.</p>
+          </div>
+          
+          <p>Figure 2 graphs the accuracy of the video prediction as R squared over 100 time points.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/nHQYeyc.jpg">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 2: E. coli Network Video Prediction Accuracy.</p>
+          </div>
+
+          <p>This prediction ability demonstrated by groups of E. coli is an example of solving a reinforcement learning problem. The TAME framework, discussed in the associated journal paper, attempts to understand problem-solving and learning across levels of organization in living systems, and connects biological to machine learning.</p>
+
+      </div>
+
+      <div class="right">
+
+        <div class="project-tags">
+          <img src="https://gabiseifert.neocities.org/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://gabiseifert.neocities.org/media/chatbox-stickers.png" style="position: absolute; margin: 100px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Biophysics</li>
+            <li>Reinforcement learning</li>
+            <li>Coding</li>
+            <li>Python</li>
+          </ul>
+        </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>

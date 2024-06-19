@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browning Birds</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/" target="_blank"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188" target="_blank"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Browning Birds Website</h1>
+          <p>I started my undergraduate studies at Scripps College in Fall 2019, but in the spring of my freshman year, March 2020, we were all sent home because of the pandemic. 
+            We didn’t return to campus until Fall 2021–my friends and I all still felt like freshmen, but we were technically upperclassmen. 
+            We were on campus, but didn’t have any knowledge of the history or culture of our college. 
+            We wanted to participate in some sort of tradition, so we started our own.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/Yggpdaoh.png">
+          </div>
+
+          <p>Browning Tower is a small, empty tower that overlooks most of the campus, with four windows cut into the walls. 
+            We hung out up there sometimes, but the tile floors were always dirty and there was always some trash lying around. 
+            My friend Julienne suggested that we start a community mural at Scripps, so we decided to transform this space. 
+            In April 2022, we painted six birds from around the world on the walls, and wrote “Add Your Own Bird.” 
+            By the time we graduated, more than 50 birds had been painted by anonymous artists, and everyone on campus knew about the Browning Bird Tower.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/DNo5URc.jpg">
+          </div>
+
+          <p>I wanted to document the history of the Bird Tower, so in February 2023 I created my first-ever website from scratch, <a href="https://browningbirds.com" target=_blank>browningbirds.com</a>. 
+            My friends Gabriel and Julienne helped me register the custom domain name with Google, and I set up a GitHub Pages repository to host the code (I switched from GitHub Pages to Neocities for my personal website because I like the community on Neocities). 
+            I spent 30 minutes reading through a single HTML/CSS tutorial, then decided I knew enough to make an entire website.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/CnFKqjih.jpg">
+          </div>
+
+          <p>This whole project was a huge learning experience. Some things went pretty well–at the end of the day, I came out with a functional website.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/td7Tlmzh.jpg">
+          </div>
+
+          <p>But I faced some major struggles. 
+            For starters, I decided early on that I wasn’t going to copy+paste any code, because I wanted to learn by writing it myself. 
+            I looked at an online tutorial for how to create a nav bar, which used HTML formatting that I later learned was an “unordered list,” with the tag &lt;ul&gt; as a container for the items. 
+            However. In many monospace fonts, the tag &lt;ul&gt; (letters) looks extremely similar to &lt;u1&gt; (letter and number), and because I was just typing out the code myself I didn’t catch the difference. 
+            I didn’t catch the mistake until months later, at which point I had somehow managed to wrangle the &lt;u1&gt; tag into being an effective nav bar.</p>
+
+          <p>But the Browning Birds website was the perfect way to learn the basics of creating a website from scratch, because it’s a very simple site with a few different types of pages. 
+            The first pages, just text and images, were the hardest to create because I didn’t understand how to position elements with CSS (a skill I didn’t fully master until almost a year later). 
+            The Gallery page was also difficult, because I needed to stack images neatly in columns in a way that would compress well on small screens, and I decided that I wanted to include captions for each image that pop up when hovered over. 
+            I achieved the caption effect by positioning the text and its semi-translucent background 100px below each image card, and then on hover the position moves up. 
+            Like this:</p>
+
+          <div class="browningsample">
+          <li class="card">
+            <img src="https://i.imgur.com/mFdfvVVh.jpg">
+            <div class="details">
+                <div class="birdlabel">
+                <span>The Browning Tower poem</span>
+                </div>
+            </div>
+          </li>
+          </div>
+
+          <p>For the Submit Birds page, I was lucky enough to stumble across FormSubmit, a service that allowed me to easily collect submissions of new bird paintings to post on the website.</p>
+
+          <p>Looking back, the Browning Birds website looks incredibly simple. 
+            It’s a purely static site, just HTML and CSS, and I can think of a million different ways to improve it. 
+            But it was my first foray into website building, and the skills I learned there allowed me to create my current, much more complicated website. 
+            If you compare the two, you can see traces of the Browning Birds throughout my whole website design. 
+            And at the end of the day, this was a website meant to document a history and a community, and I think it succeeded :)</p>
+
+      </div>
+
+      <div class="right">
+        <div class="project-tags">
+          <img src="https://gabiseifert.neocities.org/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://gabiseifert.neocities.org/media/chatbox-stickers.png" style="position: absolute; margin: 100px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Coding</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Website design</li>
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>

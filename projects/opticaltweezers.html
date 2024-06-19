@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Tweezers</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Optical Tweezers</h1>
+          <p>Read my full senior thesis, which won the Barbara McClintock Award for the best senior thesis in the sciences in 2023, on <a href="https://scholarship.claremont.edu/scripps_theses/2015/" target="_blank">Scholarship at Claremont</a>.</p>
+          <p>Photons carry momentum. When a tightly-focused beam of photons hit a particle, they transfer some of their momentum to the particle, exerting a force. Optical tweezers take advantage of this phenomenon to trap (or “tweeze”) a spherical bead just after the focus of a diverging laser beam, creating a potential well that pulls in beads.</p>
+
+          <div class="singleimage">
+            <img src="https://i.imgur.com/KXZJ7sd.png">
+          </div>
+          <div class="projectcaption">
+            <p>Two rays from a diverging laser beam hit a spherical bead. The rays refract through the bead (solid orange arrows) and reflect (dashed pink arrows). The net force is drawn in thick green.</p>
+          </div>
+
+          <p>In my senior thesis project at Scripps College:</p>
+          <ul>
+            <li>I built an optical tweezers setup</li>
+            <li>Predicted the force exerted on trapped beads, which had not previously been quantitatively calculated</li>
+            <li>Measured the actual force using the optical tweezers setup that I built</li>
+          </ul>
+
+          <div class="doubleimage">
+            <img src="https://i.imgur.com/2wtPViC.png">
+            <img src="https://i.imgur.com/XjuRpUP.jpg">
+          </div>
+          
+          <div class="projectcaption">
+            <p>Optical path diagram and photo of the optical tweezers build. The path of the 976nm trapping laser is drawn in solid orange, and the path of the brightfield light in dashed light blue.</p>
+          </div>
+
+          <p>To predict the force, I follow the path of all possible rays from a diverging beam incident on a spherical bead in an optical trap. I then sum up all force contributions from input reflection, input refraction, first output reflection, and first output refraction for each ray, and integrate over all input angles. </p>
+        
+          <div class="singleimage">
+            <img src="https://i.imgur.com/xSKKbQ1.png">
+          </div>
+          <div class="projectcaption">
+            <p>As the light path is bent in the process of reflection and refraction, the photon’s change in momentum is passed on to the bead, creating the (green arrows) forces.</p>
+          </div>
+
+          <p>I used the Fresnel equation to determine the relative magnitudes of the forces.</p>
+        
+          <p>This ray analysis in combination with the measured power level of the optical tweezers predicts a net force on the scale of 10^(-13) N exerted on the bead.</p>
+
+          <p>I calculated the actual force using the Equipartition Theorem, which relates the “stiffness” or spring constant of the trap to its temperature and the standard deviation of trapped beads’ position, which was determined by video analysis done in Python. The actual force exerted was also on the scale of 10^(-13) N, in good agreement with the predicted force.</p>
+
+          <div class="quadimage">
+            <img src="https://i.imgur.com/T52ej3C.jpg">
+            <img src="https://i.imgur.com/SPaFLgs.jpg">
+            <img src="https://i.imgur.com/TOkSspw.jpg">
+            <img src="https://i.imgur.com/0pDS09m.jpg">
+          </div>
+          <div class="projectcaption">
+            <p>A series of photos from my build showing optical trapping in action! A 1 μm fluorescent bead is initially out of the camera’s plane of focus, in the upper left corner of the image. It is pulled in toward the optical trap (the purple laser light), and in the last frame successfully trapped within the laser, along with 5 other beads.</p>
+          </div>
+
+        </div>
+
+      <div class="right">
+
+        <div class="project-tags">
+          <img src="https://gabiseifert.neocities.org/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://gabiseifert.neocities.org/media/chatbox-stickers.png" style="position: absolute; margin: 110px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Optics lab work</li>
+            <li>Lasers</li>
+            <li>Computational physics</li>
+            <li>Python</li>
+          </ul>
+        </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>

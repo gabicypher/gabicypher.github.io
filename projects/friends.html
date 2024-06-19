@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawings of my friends</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+      </div>
+
+      <div class="centertext">
+          <h1>Drawings of my friends</h1>
+          <p>
+            This page is just a bunch of my drawings from the past decade or so of people and places that are important to me--but none of my intentional or professional art. Everything here has been a little bit crumpled or accidentally thrown away, and everything was made with so much love <3
+          </p>
+          <p>
+            These drawings are mostly pen doodles from my sketchbook, but some are on printer paper or whatever scraps I could find lying around with whatever materials I could scrounge (highlighter, Crayola markers, stolen pencils, etc).
+            The digital drawings are in MS Paint or sometimes FireAlpaca.
+          </p>
+
+          <div class="illustrations"></div>
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+<script>
+  // This script sticks in images and captions for "illustrations"
+
+  // Input lists of dates and image links
+  const dateslist = [
+"3 July 2023",
+"20 November 2022",
+"10 November 2022",
+"10 September 2022",
+"20 June 2022",
+"5 June 2022",
+"1 April 2022",
+"17 March 2022",
+"25 February 2022",
+"25 February 2022",
+"25 February 2022 (collab with jojo)",
+"22 January 2022",
+"20 December 2021",
+"19 December 2021",
+"25 November 2021",
+"November 2021",
+"9 November 2021",
+"26 October 2021",
+"16 October 2021",
+"26 September 2021",
+"23 September 2021",
+"23 September 2021",
+"29 August 2021",
+"29 August 2021",
+"10 June 2021",
+"1 June 2021",
+"5 February 2021",
+"12 January 2021",
+"11 January 2021",
+"17 October 2020",
+"10 October 2020",
+"3 October 2020",
+"15 September 2020",
+"5 September 2020",
+"3 September 2020",
+"28 August 2020",
+"28 August 2020",
+"28 July 2020",
+"2 February 2020",
+"25 January 2020",
+"2 December 2019",
+"15 November 2019",
+"15 October 2019",
+"15 September 2019",
+"16 June 2019",
+"15 June 2019",
+"15 May 2019",
+"18 March 2019",
+"25 January 2019",
+"29 December 2018",
+"24 December 2018",
+"29 November 2018",
+"19 November 2018",
+"15 November 2018",
+"25 October 2018",
+"18 October 2018",
+"11 October 2018",
+"24 September 2018",
+"15 September 2018",
+"1 September 2018",
+"25 August 2018",
+"20 August 2018",
+"18 August 2018",
+"17 August 2018",
+"17 August 2018",
+"17 August 2018",
+"17 August 2018",
+"24 June 2018",
+"23 June 2018",
+"7 June 2018",
+"3 May 2018",
+"3 May 2018",
+"3 May 2018",
+"26 April 2018",
+"25 April 2018",
+"25 April 2018",
+"15 March 2018",
+"15 March 2018",
+"14 March 2018",
+"15 October 2017",
+"11 November 2016",
+"10 November 2016",
+"9 November 2016",
+"8 November 2016",
+"15 September 2015",
+"15 September 2015"
+];
+  const images = [
+"https://i.postimg.cc/52q9BgbG/2023-07-03.jpg",
+"https://i.postimg.cc/bJPZ38Tp/2022-11-20.jpg",
+"https://i.postimg.cc/FRx76qWc/2022-11-10.jpg",
+"https://i.postimg.cc/02SyQx39/2022-09-10.jpg",
+"https://i.postimg.cc/fRhTSpnm/2022-06-20.jpg",
+"https://i.postimg.cc/DZzzyGVN/2022-06-05.jpg",
+"https://i.postimg.cc/nrjcqthY/2022-04-01.jpg",
+"https://i.postimg.cc/d061YBfd/2022-03-17.jpg",
+"https://i.postimg.cc/3JGBjDGv/2022-02-25-3.jpg",
+"https://i.postimg.cc/SQ3dzGn4/2022-02-25-2.jpg",
+"https://i.postimg.cc/XX67wF0L/2022-02-25-1.jpg",
+"https://i.postimg.cc/3wYRV6tY/2022-01-22.jpg",
+"https://i.postimg.cc/zDVpBQXp/2021-12-20.jpg",
+"https://i.postimg.cc/Y2sv0dCz/2021-12-19.jpg",
+"https://i.postimg.cc/jSz28KQM/2021-11-25.jpg",
+"https://i.postimg.cc/P5GNzNZL/2021-11-15.jpg",
+"https://i.postimg.cc/D09fgYWV/2021-11-09.png",
+"https://i.postimg.cc/c4v8BVbz/2021-10-26.png",
+"https://i.postimg.cc/1X5f1H2d/2021-10-16.jpg",
+"https://i.postimg.cc/T27DmRCm/2021-09-26.png",
+"https://i.postimg.cc/N0ky0YKK/2021-09-23.png",
+"https://i.postimg.cc/L8fYrjRB/2021-09-23.jpg",
+"https://i.postimg.cc/Tw2KLSbC/2021-08-29-2.jpg",
+"https://i.postimg.cc/vHxcV51F/2021-08-29-1.jpg",
+"https://i.postimg.cc/jSrhMd6k/2021-06-10-The-Foyer.jpg",
+"https://i.postimg.cc/Hnx8KKsV/2021-06-01.jpg",
+"https://i.postimg.cc/vBDBMbzr/2021-02-05.jpg",
+"https://i.postimg.cc/1XjVZHfM/2021-01-12.jpg",
+"https://i.postimg.cc/DwbLntQG/2021-01-11.jpg",
+"https://i.postimg.cc/kGXWCGwM/2020-10-17.jpg",
+"https://i.postimg.cc/nzTQ3Zxy/2020-10-10.jpg",
+"https://i.postimg.cc/vHY08HDV/2020-10-03.png",
+"https://i.postimg.cc/Zn7p5mD8/2020-09-15.jpg",
+"https://i.postimg.cc/nL4mQBPc/2020-09-05.jpg",
+"https://i.postimg.cc/8PN0FmXs/2020-09-03.png",
+"https://i.postimg.cc/sgB91Bzv/2020-08-28-2.jpg",
+"https://i.postimg.cc/mDTH3kv3/2020-08-28-1.jpg",
+"https://i.postimg.cc/DypP2rt9/2020-07-28-1.jpg",
+"https://i.postimg.cc/W4gDGt05/2020-02-20.jpg",
+"https://i.postimg.cc/KcnWvHNd/2020-01-25.png",
+"https://i.postimg.cc/ZnFs7WnT/2019-12-02.jpg",
+"https://i.postimg.cc/XNc20yNW/2019-11-15.jpg",
+"https://i.postimg.cc/wvNGNfdR/2019-10-15.jpg",
+"https://i.postimg.cc/N0dMW51G/2019-09-15.jpg",
+"https://i.postimg.cc/y8ftC3Px/2019-06-16.jpg",
+"https://i.postimg.cc/YC2ZPzQT/2019-06-15.jpg",
+"https://i.postimg.cc/kXvLwpRx/2019-05-15.jpg",
+"https://i.postimg.cc/BbWRwWCC/2019-03-18.jpg",
+"https://i.postimg.cc/3xB74wZQ/2019-01-25.png",
+"https://i.postimg.cc/634D06C3/2018-12-29.jpg",
+"https://i.postimg.cc/Xv1bLDh2/2018-12-24.jpg",
+"https://i.postimg.cc/ZqVgZBx0/2018-11-29.png",
+"https://i.postimg.cc/wj5ZfbtX/2018-11-19.png",
+"https://i.postimg.cc/MHQpM5gX/2018-11-15.jpg",
+"https://i.postimg.cc/SKvBCY23/2018-10-25.png",
+"https://i.postimg.cc/90GK6x8H/2018-10-18.png",
+"https://i.postimg.cc/qRtd5xHp/2018-10-11.png",
+"https://i.postimg.cc/N0gVW7TW/2018-09-24.jpg",
+"https://i.postimg.cc/Jnghzv69/2018-09-15.jpg",
+"https://i.postimg.cc/XY0pFMjW/2018-09-01.jpg",
+"https://i.postimg.cc/tCxLPgpm/2018-08-25.jpg",
+"https://i.postimg.cc/PJL0SXZJ/2018-08-20.jpg",
+"https://i.postimg.cc/0jb1hdg8/2018-08-18.jpg",
+"https://i.postimg.cc/4dxDhbxz/2018-08-17-4.jpg",
+"https://i.postimg.cc/9FDckVVG/2018-08-17-3.jpg",
+"https://i.postimg.cc/Y09tMBFB/2018-08-17-2.jpg",
+"https://i.postimg.cc/Rhyxm69w/2018-08-17-1.jpg",
+"https://i.postimg.cc/tTD9K4Yz/2018-06-24.jpg",
+"https://i.postimg.cc/bJqzVtNJ/2018-06-23.jpg",
+"https://i.postimg.cc/Zq8bLcm2/2018-06-07.jpg",
+"https://i.postimg.cc/HxmxGN3T/2018-05-03-3.jpg",
+"https://i.postimg.cc/RZjhdhH6/2018-05-03-2.jpg",
+"https://i.postimg.cc/YSY9s76X/2018-05-03-1.jpg",
+"https://i.postimg.cc/BQ7X8MZC/2018-04-26.jpg",
+"https://i.postimg.cc/tTdsYb71/2018-04-25-2.jpg",
+"https://i.postimg.cc/6Q2R6FdR/2018-04-25.jpg",
+"https://i.postimg.cc/wB2ygWdp/2018-03-15-2.jpg",
+"https://i.postimg.cc/zvbVw8Hz/2018-03-15-1.jpg",
+"https://i.postimg.cc/D0qPvR35/2018-03-14.jpg",
+"https://i.postimg.cc/bNcm79f3/2017-10-15.png",
+"https://i.postimg.cc/t4t7NrJx/2016-11-16.jpg",
+"https://i.postimg.cc/QNwB89vH/2016-11-10.jpg",
+"https://i.postimg.cc/7LHhsgJQ/2016-11-09.jpg",
+"https://i.postimg.cc/bNnZsYjL/2016-11-08.jpg",
+"https://i.postimg.cc/XJvZJwVy/2015-09-15-2.jpg",
+"https://i.postimg.cc/MHkY8qNv/2015-09-15-1.jpg"
+  ];
+  
+  // from i=0 to i=length of dates list
+  // div class "illustrations" inserts <div class="card"> <img src="images[i]"> <p>dateslist[i]</p> </div>
+  for (let i = 0; i < dateslist.length; i++) {
+    document.querySelector('.illustrations').innerHTML += '<div class="card">' + '<img src="' + images[i] + '">' + '<p>' + dateslist[i] + '</p>' + '</div>';
+  }
+</script>
+
+</body>
+</html>

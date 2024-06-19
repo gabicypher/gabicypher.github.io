@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining Halls Predictor</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://gabiseifert.neocities.org/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://gabiseifert.neocities.org/topdoodles.png">
+    </a>
+    <li><a href="https://gabiseifert.neocities.org/website">Website</a></li>
+    <li><a href="https://gabiseifert.neocities.org/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.neocities.org/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.neocities.org/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.neocities.org/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://gabiseifert.neocities.org/header1.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://gabiseifert.neocities.org/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.neocities.org/contact"><h4><img src="https://gabiseifert.neocities.org/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://gabiseifert.neocities.org/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://gabiseifert.neocities.org/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Dining Halls Traffic Predictor</h1>
+
+          <div class="singleimage">
+            <img src="https://i.postimg.cc/wTN6xk7M/all-students-dining-hall-choice.png">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 1. All Students’ Dining Hall Choice. Scripps and Frary are the most popular (true to real life), Scripps' quality changes every two weeks (true to real life), Pitzer is initially unpopular but will regain its former high status, CMC is wildly unpopular with twice-weekly massive spikes in students (true to real life).</p>
+          </div>
+          
+          <p>In 2022, I took Computational Science and Engineering at Scripps College, a class focused on using computational methods in scientific computing software Maple and MATLAB to solve real-world physics problems too difficult to do by hand.</p>
+
+          <p>For the final project, I decided to model a silly but complicated real-world situation in MATLAB: the dining halls at the Claremont Colleges. The Claremont Colleges are a consortium of five colleges, all located within a 1-square-mile campus just outside of Los Angeles. There are six dining halls available to students, one at each college with two at Pomona. Students are free to eat at any dining hall, which each have their own styles of food as well as reputations, so I wanted to predict the dining hall popularity over the course of a semester.</p>
+
+          <p>I wanted to see if I could write a complex script in MATLAB, incorporating user input, 3-dimensional data sets, complicated variables, and useful visualizations.</p>
+
+          <p>The script goes through each day (time loop), each college, and every student. Every student decides which dining hall to go to by finding a “value” (desirability) of each dining hall and then going to the dining hall with the highest value. If no value is high enough, the student just stays home.</p>
+
+          <p>The code to determine the “value” of a college (in this case the Pitzer dining hall for a non-Pitzer student) is:</p>
+
+          <div class="code-snippet">
+          <p>Pval = randi(1000) + Pqual - 50*Dist(C, 3) - .05*Ptot(6, t-1) + .5*Ptot(C, t) - 5000/(t);</p>
+          </div>
+
+          <ul>
+          <li>1st term: a random number, meant to simulate mood</li>
+          <li>2nd term: food quality, variable is set above and determined by polling students in my classes</li>
+          <li>3rd term: distance to dining hall, determined by looking at a map of the Claremont colleges. A “Dist” matrix is defined above—this term looks at row C and column 3 of the matrix. Column 3 represents Pitzer, row C represents the student’s home college (C is defined earlier in the loop).</li>
+          <li>4th term: the total number of students that were at the Pitzer dining hall yesterday, meant to discourage students from dining halls that were previously too crowded.</li>
+          <li>5th term: the number of other students from this student’s home college that are currently at the Pitzer dining hall. Meant to represent the number of friends at this dining hall.</li>
+          <li>6th term: home dining hall bias (not present here). Students are slightly more likely to go to their home dining hall.</li>
+          <li>7th term: Pitzer food poisoning. People have been avoiding Pitzer recently because of fears of food poisoning, but the strength of this aversion will fade over time.</li>
+          <li>8th term: fluctuating quality of Scripps food (not present here). Scripps’ food quality changes on a monthly basis, represented by a sine wave.</li>
+          <li>9th term: twice-monthly decent CMC food (not present here). Once every two weeks CMC has something really good on the menu, so everyone rushes to CMC for just one day.</li>
+          </ul>
+
+          <p>Users can rate the importance of four variables and MATLAB plots out what the dining hall trends would be if everyone agreed with these inputs. If the user inputs are outside the acceptable range, MATLAB will reject them. The scaling modifiers in front of each term were determined by asking my friends which factors were most important in deciding which dining hall to go to.</p>
+
+          <p>Here are some of the graphs produced. The exact graphs change slightly every time the code is run because of the user input and the random factor, but these particular graphs are fairly average.</p>
+
+          <div style="display: flex; flex-direction: horizontal;">
+            <div class="captioned-figure">
+              <img src="https://i.postimg.cc/R0S9R5GJ/most-variables.png">
+              <p>Figure 2. If Everybody Cared the Most About Everything (all variables are of the highest importance). In this case the Claremont Colleges dining hall system becomes reactionary chaos. A user will receive a warning of the impending chaos if they place too much value on crowding.</p>
+            </div>
+
+            <div class="captioned-figure">
+              <img src="https://i.postimg.cc/qvdpNC3L/least-variables.png">
+              <p>Figure 3. No One Cares About Anything (all variables are of the lowest importance). In this case everyone just chooses a dining hall at random, and they each stay about equally busy every day for the entire semester.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: horizontal; margin-top: 40px;">
+            <div class="captioned-figure">
+              <img src="https://i.postimg.cc/cLM0w47N/scripps-students-dining-hall-choice.png">
+              <p>Figure 4. Scripps Students’ Dining Hall Choice. I selected this graph because it’s fairly representative of each individual college’s patterns. Scripps students tend to prefer their own dining hall but on special days CMC is more popular. They are also strongly biased against Frank because it’s so far away.</p>
+            </div>
+  
+            <div class="captioned-figure">
+              <img src="https://i.postimg.cc/wxZqdrxn/cmc-students-dining-hall-choice.png">
+              <p>Figure 5. CMC Students’ Dining Hall Choice. This graph is particularly interesting because CMC students strongly prefer Pomona dining halls above their own. This is true to real life, and reflects the opinions shared with me by CMC students when polled.</p>
+            </div>
+          </div>
+
+      </div>
+      
+      <div class="right">
+        <div class="project-tags">
+          <img src="https://gabiseifert.neocities.org/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://gabiseifert.neocities.org/media/chatbox-stickers.png" style="position: absolute; margin: 50px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Coding</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>
