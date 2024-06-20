@@ -45,8 +45,10 @@
 
 <!-- Header -->
   <div class="header">
-    <h1><span class="highlighted">Gabi</span></h1>
-    <h1><span class="highlighted">Seifert</span></h1>
+    <h1><div id="typo" data-typo-chance="35" data-typing-delay="100" data-typing-jitter="20">Gabi Seifert</div></h1>
+    <!--
+      <h1><span class="highlighted">Gabi</span></h1>
+      <h1><span class="highlighted">Seifert</span></h1>  old code to highlight, incompatible with typo code -->
   </div>
   
   <!-- Main content -->
@@ -70,6 +72,12 @@
 
       <div class="polaroid">
         <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/polaroid.png">
+      </div>
+
+      <div class="horse-stickers">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/horse-sticker-1.png" alt="Sparkly horse sticker" style="margin: 50px 0 0 0;">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/horse-sticker-2.png" alt="Sparkly horse sticker" style="margin: 0 0 0 100px;">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/horse-sticker-3.png" alt="Sparkly horse sticker" style="margin: 100px 0 0 140px;">
       </div>
 
       </div>
@@ -204,10 +212,18 @@
       
       <div class="right">
       <div class="box2">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/rainbow-sticker.png">
         <div class="text">
           <h3>Website news</h3>
           <p>Over the next few weeks I'll be moving over to my permanent domain name, <a href="https://gabiseifert.com" target="_blank">https://gabiseifert.com</a>. I'll also be switching to hosting on Github Pages instead of my beloved Neocities, but this page will stay up.</p>
         </div>
+      </div>
+
+      <div class="smiley-stickers">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/yellow-smiley-sticker.png" alt="Yellow sparkly smiley face sticker">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/orange-smiley-sticker.png" alt="Orange sparkly smiley face sticker">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/teal-smiley-sticker.png" alt="Teal sparkly smiley face sticker">
+        <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/pink-smiley-sticker.png" alt="Pink sparkly smiley face sticker">
       </div>
 
       <!-- Music Player -->
@@ -325,7 +341,7 @@
   <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
 </div>
 
-<!-- JS! -->
+<!-- JS for music player and typo -->
 <script>
   const musicContainer = document.querySelector('.music-container');
   const playBtn = document.querySelector('#play');
@@ -560,8 +576,143 @@
   }
   
   pauseSong();
-  
-</script>
 
-</body>
-</html>
+  </script>
+
+<!-- JS for typo -->
+<script>
+  function num_between(min, max) {
+    return Math.floor(Math.random() * (max- min + 1) + min);
+  }
+  
+  function chance(val) {
+    if(num_between(0, 100) < val) return true;
+    else return false;
+  }
+  
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
+  var typos = {
+    q:['w','a'],
+    w:['q','r','s'],
+    e:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    //r:['e','f','t'], take out the last few letters in name to avoid stopping on typo
+    //t:['r','g','y'],
+    y:['t','h','u'],
+    u:['y','j','i'],
+    i:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    o:['i','l','p'],
+    p:['o',';','['],
+    a:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    s:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    d:['e','s','c','f'],
+    f:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    g:['t','f','b','h', 'r', 'y', 'd', 'v', 'j'],
+    h:['y','g','n','j'],
+    j:['u','h','m','k'],
+    k:['i','j',',','l'],
+    l:['o','k','.',';'],
+    z:['a','x'],
+    x:['z','s','c'],
+    c:['x','d','v'],
+    v:['c','f','b'],
+    b:['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
+    n:['b','h','m'],
+    m:['n','j',','],
+  }
+  
+  async function typo(element, text) {
+    var buffer = '';
+    var typo_active = false;
+    var tag_active = false;
+    var typing_typos = (element.dataset.typoChance) ? element.dataset.typoChance : 10;
+    var typing_speed = (element.dataset.typingDelay) ? element.dataset.typingDelay : 50;
+    var typing_jitter = (element.dataset.typingJitter) ? element.dataset.typingJitter : 15;
+    
+    for (var i = 0; i < text.length; i++) {
+      
+      // Get the letter that we’re supposed to type
+      letter = text.charAt(i);
+      
+      // Trigger a typo
+      if(chance(typing_typos) && typo_active === false && i > 1) {
+        
+        if(typeof typos[letter] !== 'undefined') {
+          
+          // Swap the letter with a random typo
+          typo = typos[letter][Math.floor(Math.random() * typos[letter].length)];
+          
+          // Append the letter to the buffer
+          buffer = buffer + typo;
+          
+          // Write the buffer
+          element.innerHTML = buffer;
+          
+          typo_active = true;
+          var seed = num_between(2,3); //lower this to catch typos faster
+          realization_delay = seed;
+          realization_delay_counter = seed;
+        }
+      }
+      
+      // Append the letter to the buffer
+      buffer = buffer + letter;
+      
+      // Write the buffer
+      element.innerHTML = buffer;
+      
+      // Typical typing speed
+      var speed_lower = parseFloat(typing_speed) - parseInt(typing_jitter);
+      var speed_upper = parseFloat(typing_speed) + parseInt(typing_jitter);
+      
+      delay = num_between(speed_lower,speed_upper);
+      
+      // Chance of longer delay though
+      if(chance(5)) delay = num_between(100, 200);
+      await sleep(delay);
+      
+      if(typo_active) {
+        
+        realization_delay_counter--;
+        
+        if(realization_delay_counter == 0) {
+      
+          for (var k = 0; k < seed+1; k++) {
+            
+            // Pause at realization of typo
+            await sleep(typing_jitter);
+            
+            // Rewind the buffer!
+            buffer = buffer.substring(0, buffer.length - 1);
+    
+            // Write rewound buffer
+            element.innerHTML = buffer;
+            
+            // Brief pause before continuing
+            await sleep(30);
+          }
+          
+          typo_active = false;
+          
+          // Add the letters back
+          i = i - seed;
+          await sleep(100);
+        }
+      }
+    }
+    
+    // Whatever you do here will happen when the typing is finished
+    //do_something();
+    
+    return new Promise(resolve => setTimeout(resolve, 1));
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() { 
+    var element = document.getElementById('typo');
+    var text = element.innerHTML;
+    typo(element, text);
+  });
+  
+  </script>
