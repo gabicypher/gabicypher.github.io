@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stentor coeruleus - Gabi Seifert</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/favicon.gif">
+
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/topdoodles.gif">
+    </a>
+    <li><a href="https://gabiseifert.com/website">Website</a></li>
+    <li><a href="https://gabiseifert.com/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.com/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.com/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.com/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/header.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.com/contact"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Stentor coeruleus</h1>
+          <h2>Summary</h2>
+          <p>Working with Dr. Janet Sheung at Scripps College, I pipetted single-celled organism Stentor coeruleus between wells with sucrose or urea solutions to pacified spring water to remove the oral apparatus, edited MATLAB code to track cell motion on video, and did extensive background research on regulation of genes during cell regeneration.</p>
+          <p>This work has been <a href="https://app.jove.com/t/62352/analysis-of-motility-patterns-of-stentor-during-and-after-oral-apparatus-regeneration-using-cell-tracking" target="_blank">published in the Journal of Visualized Experiments</a>, and was presented at the 65th Biophysical Society Annual Meeting, summarized below.</p>
+      
+          <h2>Full Review</h2>
+          <p>Stentor coeruleus has long been used as a model organism to understand unicellular regeneration. After a chemical shock, the oral apparatus is shed in its entirety and regenerated over the course of eight hours (Figure 1). As the oral apparatus regenerates, the newly formed cilia undergo reproducible changes in position and activity, which in turn affects the swimming motility of the cell. By analyzing motility, we implemented an assay for “functional regeneration”, that quantifies regeneration by quantifying the function of the regenerated structures. This assay can, in principle, be used to study development and functional regeneration in other swimming organisms.</p>
+      
+          <div class="singleimage">
+            <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/stentor.png">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 1. Cell tracking reveals gradual recovery of directed swimming. The sucrose shock induces S. coeruleus to shed its membranellar band.</p>
+          </div>
+
+          <p>We shocked cells in 10% sucrose or 2% urea to force regeneration of the oral apparatus, and then recorded 10-second videos of groups of 10 Stentor at each timepoint through a microscope. To track cell motion in the videos, we used MATLAB to identify and plot cell trajectories.</p>
+      
+          <p>We observed a gradual and sustained increase in movement range from the most motile cells within the regenerating Stentor population. At two hours, the earliest time point, no cells move more than 1mm during the ten second video, while at nine hours many cells traversed more than 5mm during the same length of time (Figure 2).</p>
+      
+          <div class="singleimage">
+            <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/stentor_figure_2.jpg">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 2. Overlay of all trajectories at 2 hours, 3 hours, 7 hours, and 8 hours. Times were rounded to the closest hour during compilation of data. Dotted circles indicate radial displacements of one millimeter.</p>
+          </div>
+
+          <p>Over 10 hours, the cells went through four behaviorally distinct phases of motion:</p>
+        
+          <ol>
+            <li>From 0-3 hours, most cells display little to no visible motion, while the range of movement of the most motile cells in the population gradually increases, as seen in the scatter overlay of Figure 3.</li>
+            <li>From 4-7 hours, the range of movement continues to increase as cell speeds drop across the population.</li>
+            <li>From 8-10 hours, we observed a statistically significant increase in speed. The fastest cells often swam across the well or followed the wall all the way around during a ten second video, interpreted as an intentional exploration of the environment, before settling into a small colony of cells.</li>
+            <li>After 10 hours, the cell population transitioned from exploring the environment to securely anchored with their holdfast and extended in Stentor’s characteristic trumpet shape. The cells at this phase behaviorally resemble healthy cells.</li>
+          </ol>
+
+          <div class="singleimage">
+            <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/stentor_figure_3.jpg">
+          </div>
+          <div class="projectcaption">
+            <p>Figure 3. Motile subpopulation demonstrates four distinct phases of behavior through OA regeneration. Boxplot of swim speed; boxes extend from Q1 to Q3 quartile values at each time with median value indicated in green. Scatter overlay are the average speed of each motile cell. Inset shows representative population behavior during each of four phases.</p>
+          </div>
+
+          <p>So why does Stentor coeruleus transition through four behaviorally distinct phases of movement patterns? Proteomic studies had shown Stentor coeruleus to be repressing transcription factors, including aurora kinases required for microtubule polymerization, during phase 1 (Sood, P. et al. 2017, Wang, L. et al. 2008). This suggests that the cell has recognized that it is missing the oral apparatus and is deconstructing its cytoskeleton in order to rebuild, consequently decreasing movement.</p>
+        
+          <h2>Further Reading</h2>
+          <p>Sood, P., McGillivary, R., Marshall, W. F. The transcriptional program of regeneration in the giant single cell, Stentor coeruleus. bioRxiv. , 240788 (2017)</p>
+          <p>Wang, L. et al. Requirement of Aurora-A kinase in astral microtubule polymerization and spindle microtubule flux. Cell Cycle. 7 (8), 1104–1111, doi: 10.4161/cc.7.8.5738 (2008)</p>
+        </div>
+
+      <div class="right">
+
+        <div class="project-tags">
+          <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/chatbox-stickers.png" style="position: absolute; margin: 80px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Biophysics</li>
+            <li>Coding</li>
+            <li>MATLAB</li>
+          </ul>
+        </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2024 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>
