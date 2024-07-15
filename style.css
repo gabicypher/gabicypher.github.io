@@ -4,7 +4,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background-color: #fffcf5;
-  background-image: url("https://gabiseifert.neocities.org/media/backgroundtiles.png");
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/backgroundtiles.png");
 }
 
 h1, h2, h3, h4, h5, h6 {font-family: 'Courier New', Courier, monospace;}
@@ -14,7 +14,7 @@ a {color: #cd7722;} /* make the links a different color */
 
 ::selection {
   color: black;
-  background: #ffd300; /* text highlights orange */
+  background: #ffd300; /* text highlights yellow */
 }
 
 /* Create navigation bar */
@@ -94,14 +94,14 @@ a {color: #cd7722;} /* make the links a different color */
   padding: 80px 50px;
   position: relative;
   text-align: right;
-  background-image: url("https://gabiseifert.neocities.org/header1.png");
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/header.png");
   background-size: cover;
   color: #260a30;
 }
 
 /* Increase the font size of the header */
 .header h1 {
-  font-size: 100px;
+  font-size: min(10vw, 100px); /* font size is 10% of the viewport width, up to 100px max */
   margin: 0;
 }
 
@@ -126,11 +126,12 @@ a {color: #cd7722;} /* make the links a different color */
 @media only screen and (max-width: 450px) {
   /* Make the header smaller on mobile */
   .header {
-      padding: 70px 10px;
+      height: 30vw; /* header height is 30% of the screen width */
+      padding: 0;
   }
-  /* Make header font smaller on mobile */
+  /* Make header font less padded on mobile */
   .header h1 {
-  font-size: 20px;
+  padding: 10vw 10px; /* top/bottom padding is 10% of the screen width, left/right is 10px */
   }
 }
 
@@ -151,9 +152,17 @@ a {color: #cd7722;} /* make the links a different color */
   flex-direction: row; /* aligns items in a row next to each other */
   flex-wrap: nowrap;
   align-items: flex-start; /* aligns items at the top of the page */
-  padding: 20px 50px;
+  padding: 20px 50px 20px 50px; /* t r b l */
   color:#260a30;
   position: relative;
+}
+@media only screen and (max-width: 1000px) {
+  .main {
+      flex-direction: column; /* aligns items in a column on top of each other */
+      float: center;
+      padding: 2.5vw;
+      margin: 0px;
+  }
 }
 
 /* Left side */
@@ -162,35 +171,128 @@ a {color: #cd7722;} /* make the links a different color */
   flex-direction: column;
   position: sticky; /* makes this stick at the top when scrolling */
 }
+@media only screen and (max-width: 1000px) {
+  .left {
+    flex-direction: row; /* aligns left column items in a row if possible */
+    flex-wrap: wrap; /* contact note goes below sticky note if no space */
+  }
+}
 
 .sticky {
+  order: 1;
   flex: none; /* prevents this from being compressed */
   float: left; /* sits at the left side of the page */
-  top: 20px;
   padding: 0px 0px;
   width: 288px;
-  background-image: url("https://gabiseifert.neocities.org/media/stickynote.png");
+  height: 300px;
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/stickynote.png");
   background-size: cover;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 600px) {
+  .sticky {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 45vw;
+    height: 46.875vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .sticky {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 32vw;
+    height: 33.333333vw; /* 300*32/288 */
+  }
 }
 
 .sticky .text {
   padding: 20px 50px 50px 45px; /* t r b l */
 }
+@media only screen and (max-width: 600px) {
+  .sticky .text {
+    padding: 3.125vw 7.8125vw 7.8125vw 7.03125vw;
+  }
+  .sticky .text h3 {
+    font-size: 3.5vw;
+    margin: 4vw 0 2vw 0; /* t r b l */
+  }
+  .sticky .text h4 {
+    font-size: 2.5vw;
+    margin: 0 0 2vw 0; /* t r b l */
+  }
+  .sticky .text p {
+    font-size: 2.5vw;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .sticky .text {
+    padding: 2.2222vw 5.5556vw 5.5556vw 5vw;
+  }
+  .sticky .text h3 {
+    font-size: 2.4889vw;
+    margin: 2.8444vw 0 1.4222vw 0; /* t r b l */
+  }
+  .sticky .text h4 {
+    font-size: 1.7778vw;
+    margin: 0 0 1.4222vw 0; /* t r b l */
+  }
+  .sticky .text p {
+    font-size: 1.7778vw;
+    margin: 0;
+  }
+}
 
 /* paper scrap with contact info */
 .contact-note {
+  order: 2;
   margin-top: 30px; /* leave space between post it and this */
   padding: 0px 0px 0px 60px; /* t r b l */
-  background-image: url("https://gabiseifert.neocities.org/media/contact-note.png");
+  width: 228px; /* column width 288, minus 60 for left padding */
+  height: 150px;
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/contact-note.png");
+  background-size: cover;
   background-repeat: no-repeat;
+}
+@media only screen and (max-width: 600px) {
+  .contact-note {
+    order: 3; /* place after polaroid in mobile layout */
+    position: absolute;
+    margin-top: 48vw;
+    padding: 0px 0px 0px 9.375vw; /* t r b l */
+    width: 35.625vw;
+    height: 23.4375vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .contact-note {
+    padding: 0px 0px 0px calc(60vw*32/288); /* t r b l */
+    width: calc(228vw*32/288);
+    height: calc(150vw*32/288);
+  }
 }
 
 .contact-note h4 {
-line-height: 12.5px; /* make the lines closer together */
-font-size: 15px;
-padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
-
+  line-height: 12.5px; /* make the lines closer together */
+  font-size: 15px;
+  padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
+}
+@media only screen and (max-width: 600px) {
+  .contact-note h4 {
+    line-height: 1.953125vw;
+    font-size: 2.5vw;
+    padding: 0 0 0 4.6875vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .contact-note h4 {
+    line-height: 1.3889vw;
+    font-size: 1.6667vw;
+    padding: 0 0 0 3.3333vw;
+  }
 }
 
 .contact-note img {
@@ -199,29 +301,71 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   vertical-align: middle; /* align to middle of text line */
   margin: -3px 0px 0px -30px; /* t r b l, move these up a tad and 30px left of text start */
 }
+@media only screen and (max-width: 600px) {
+  .contact-note img {
+    width: 2.65625vw;
+    margin: -0.46875vw 0 0 -4.6875vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .contact-note img {
+    width: 1.8889vw;
+    margin: -0.3333vw 0 0 -3.3333vw;
+  }
+}
 
 .contact-note a {
   color: #260a30; /* links auto-color orange, so undo this */
 }
 
 .polaroid {
+  order: 3;
   margin-top: 20px; /* leave space between contact note and this */
   flex: none; /* prevents this from being compressed */
   float: left; /* sits at the left side of the page */
   padding: 0px 0px;
   width: 288px;
 }
+@media only screen and (max-width: 600px) {
+  .polaroid {
+    order: 2; /* place before contact note in mobile layout */
+    width: 45vw;
+    margin: 0 0 0 1vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .polaroid {
+    width: 27.5vw;
+    margin: 0 0 -30px 0; /* move text below up 30px */
+  }
+}
 
 .polaroid img {
   width: 288px;
 }
+@media only screen and (max-width: 600px) {
+  .polaroid img {
+    width: 45vw;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+  .polaroid img {
+    width: 27.5vw;
+  }
+}
 
 .horse-stickers {
+  order: 4;
   width: 288px;
 }
 .horse-stickers img {
   width: 50%;
   position: absolute;
+}
+@media only screen and (max-width: 1000px) {
+  .horse-stickers {
+    display: none;
+  }
 }
 
 .smiley-stickers {
@@ -242,6 +386,14 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   margin-right: 70px;
   padding: 0; /* padding top right bottom left */
 }
+@media only screen and (max-width: 1000px) {
+  .centertext {
+    padding: 20px 0px 0px 0px;
+    left: 0px;
+    right: 0px;
+    margin-right: 0px;
+  }
+}
 
 /* Main page center column subdivisions */
 .textchunk {
@@ -249,18 +401,10 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   flex-direction: horizontal;
 }
 
-.point7wide {
-  width: 70%;
-}
-.point6wide {
-  width: 60%;
-}
-.point4wide {
-  width: 40%;
-}
-.point3wide {
-  width: 30%;
-}
+.point7wide {width: 70%;}
+.point6wide {width: 60%;}
+.point4wide {width: 40%;}
+.point3wide {width: 30%;}
 
 /* Keep images contained in the center column */
 .centertext img {
@@ -285,6 +429,12 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   flex-direction: column;
   position: sticky; /* makes this stick at the top when scrolling */
 }
+@media only screen and (max-width: 1000px) {
+  .right {
+    flex-direction: row; /* aligns right column items in a row if possible */
+    flex-wrap: wrap; /* contact note goes below sticky note if no space */
+  }
+}
 
 /* Main page right sticky box */
 .box2 {
@@ -293,7 +443,7 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   float: right; /* sits at the right side of the page */
   padding: 0px 0px;
   width: 288px;
-  background-image: url("https://gabiseifert.neocities.org/media/paperscrap.png");
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/paperscrap.png");
 }
 
 .box2 .text {
@@ -311,7 +461,7 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
 .project-tags {
   margin-top: 30px;
   width: 288px;
-  background-image: url("https://gabiseifert.neocities.org/media/paperscrap2.png");
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/paperscrap2.png");
 }
 
 .project-tags h3 {
@@ -321,42 +471,6 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
 .project-tags li {
   padding-left: 10px;
   padding-bottom: 5px;
-}
-
-/* on screens less than 900px, main page elements stack */
-@media only screen and (max-width: 900px) {
-.main {
-    flex-direction: column; /* aligns items in a column on top of each other */
-    float: center;
-    padding: 20px;
-    margin: 0px;
-    top: 0px;
-  }
-.left {
-  flex-direction: row; /* aligns left column items in a row if possible */
-  flex-wrap: wrap; /* contact note goes below sticky note if no space */
-}
-  .sticky {
-    position: relative;
-    margin-right: 30px; /* leave space between sticky and contact notes */
-  }
-  .contact-note {
-    position: relative;
-    padding-right: 100px; /* need +right padding if not in column */
-  }
-  .centertext {
-      padding: 20px 0px 0px 0px;
-    left: 0px;
-    right: 0px;
-    margin-right: 0px;
-  }
-.box2 {
-      position: relative;
-    width: calc(100% - 50px); /* 100% minus 2*15px border and 2*10px padding */
-    padding: 0px 10px;
-    background-color: #ffbe00;
-    border: 15px solid #f8de7f;
-  }
 }
 
 /* Projects page grid */
@@ -613,7 +727,7 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
   width: 100%; /* fill entire column */
   display: flex;
   flex-wrap: wrap; /* break images into multiple lines rather than just one very long row */
-  background-image: url(https://gabiseifert.neocities.org/media/sketchbookbg.png);
+  background-image: url(https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/sketchbookbg.png);
   background-size: 100%; /* set background image width to 100% */
 }
 
@@ -699,7 +813,7 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
 .footer {
   padding: 20px 20px 180px 20px; /* t r b l*/
   text-align: center;
-  background-image: url("https://gabiseifert.neocities.org/media/footer.png");
+  background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/footer.png");
   font-size: 12px;
   position: relative;
 }
@@ -714,7 +828,7 @@ padding: 0px 0px 0px 30px; /* t r b l, move text 30px right */
     border-style: solid; 
     border-width: 3px; 
     border-radius: 1px; 
-    background-image: url("https://gabiseifert.neocities.org/media/music-player/music-player-bg.png");
+    background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/music-player/music-player-bg.png");
     background-color: #fada5f; 
     border-color: #df881e; 
     text-align: center; 
