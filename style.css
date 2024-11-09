@@ -7,6 +7,16 @@ body {
   background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/backgroundtiles.png");
 }
 
+::-webkit-scrollbar-track {
+  background: #ffe5b4;
+}
+::-webkit-scrollbar-thumb {
+  background: #fba45e;
+}
+* {
+  scrollbar-color: #fba45e #ffe5b4; /* scroll thumb and track */
+}
+
 h1, h2, h3, h4, h5, h6 {font-family: 'Courier New', Courier, monospace;}
 
 
@@ -529,18 +539,6 @@ a {color: #cd7722;} /* make the links a different color */
 
 /* Project grid reduces to 3 wide on smaller screen */
 @media only screen and (max-width: 1200px) {
-  .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-  }
-}
-/* Project grid reduces to 2 wide on even smaller screen */
-@media only screen and (max-width: 1000px) {
-  .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-  }
-}
-/* Project grid increases to 3 wide with mobile layout of bars */
-@media only screen and (max-width: 900px) {
   .grid-container {
         grid-template-columns: repeat(3, 1fr);
   }
