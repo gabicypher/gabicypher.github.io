@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-pass cell - Gabi Seifert</title>
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/favicon.gif">
+
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+
+  </head>
+  <body>
+
+<!-- Nav bar-->
+<div class="tophead">
+  <u1>
+    <a class="topname">
+      <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/topdoodles.gif">
+    </a>
+    <li><a href="https://gabiseifert.com/website">Website</a></li>
+    <li><a href="https://gabiseifert.com/contact">Contact</a></li>
+    <li><a href="https://gabiseifert.com/cv">CV</a></li>
+    <li><a class="active" href="https://gabiseifert.com/projects">Projects</a></li>
+    <li><a href="https://gabiseifert.com/">Home</a></li>
+  </u1>
+</div>
+
+<!-- Page title -->
+<div class="titleline">
+  <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/header.png">
+</div>
+
+  <!-- Main content -->
+  <div class="row">
+    <div class="main">
+      <div class="left">
+        <div class="sticky">
+          <div class="text">
+          <h3>Gabi Seifert</h3>
+          <h4>she/her</h4>
+          <p>Physics PhD student at the University of Colorado Boulder specializing in atomic, molecular, and optical physics.</p>
+          </div>
+        </div>
+  
+        <div class="contact-note">
+          <h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-location.png" alt="Location pin logo">Boulder, CO</h4>
+          <a href="https://gabiseifert.com/contact"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-mail.png" alt="Email logo">Email</h4></a>
+          <a href="https://www.linkedin.com/in/gabriella-seifert/"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-linkedin.png" alt="LinkedIn logo">LinkedIn</h4></a>
+          <a href="https://orcid.org/0000-0002-0988-1188"><h4><img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/logo-orcid.png" alt="ORCID logo">ORCID</h4></a>
+        </div>
+        </div>
+
+      <div class="centertext">
+          <h1>Multi-pass cell</h1>
+          <p>Check out my postdeadline talk on multi-pass cells from the Frontiers in Optics and Laser Science conference in Denver, recorded September 24th, 2024:</p>
+      
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YwJsrivqfrs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+          <p>You can find the whole article <a href="https://opg.optica.org/abstract.cfm?uri=LS-2024-JTu7A.3"  target="_blank">here on Optica</a>.</p>
+        
+          <h2>Summary</h2>
+
+          <p>Over the summer of 2024, I built a multi-pass cell in the lasers team of the KM Group at CU Boulder to temporally compress ultrafast laser pulses. We achieved 250 &mu;J, near transform-limited 2.4-cycle duration, 3 &mu;m wavelength pulses via nonlinear self-compression in the multi-pass cell.</p>
+        
+          <p>My labmates, especially Micha&#235;l Hemmer and Will Hettel, helped extensively on this project, and I send my greatest thanks.</p>
+        
+          <h2>Introduction</h2>
+
+          <p>Laser pulses with less than 10 optical cycles are now used all the time for applications like capturing fast charge and spin transfer events, or to generate high harmonic beams (that’s what we’re interested in!).</p>
+
+          <p>High-harmonic generation (HHG) is an optical process where an input laser (in our case, a 3 &mu;m pulsed laser) ionizes target gases to produce a high-energy output beam 💪. The KM Group uses HHG to produce bright soft x-ray high-harmonic beams.</p>
+
+          <p>In the mid-infrared region of the spectrum, HHG is optimized for ~6-cycle laser pulses, to avoid walk-off effects that reduce conversion efficiency.[1] Phase matching occurs only during a single half-cycle, producing a chirped coherent soft x-ray supercontinuum. However, the generation of intense sub-10-cycle optical pulses is challenging as these pulses feature spectral widths that exceed the gain bandwidth of even the broadest gain media 🌈. Alternative techniques such as optical parametric chirped pulse amplification (OPCPA) has not worked well at mid-IR (MIR) wavelengths (MIR, &lambda; >3 &mu;m) because of the limited phase matching bandwidth of common nonlinear crystals, and hasn’t produced the ~6 cycle pulse durations ideal for HHG.</p>
+
+          <p>Enter: 💫multi-pass cells!💫 Nonlinear post-compression approaches that rely on gas-filled hollow waveguides,[2] a series of dielectric plates,[3] or multi-pass cells[4] have been developed that provide an alternative path to generate sub-10-cycle pulses. Multi-pass cells are super cool right now because they’re versatile and efficient.</p>
+
+          <p>Crucially, nonlinear compressors operated in the NIR spectral range require the use of chirped mirrors to complete the compression; this limits efficiency, compactness and reliability. But, in pandemic-era simulations, my lab group showed numerically that in the MIR in a multi-pass cell featuring a dielectric plate, the anomalous dispersion of the plate can be leveraged to achieve self-compression 🎉,[5] (wow!) hence operating free from chirped mirrors. An experimental demonstration was reported by Jargot et al.[6] showing self-compression of 1.5 &mu;m wavelength, 15 &mu;J energy pulses to ~4.3-cycle duration.</p>
+
+          <p>Here, we demonstrate for the first time self-compression of mid-IR (&lambda; = 3 &mu;m) pulses in a multi-pass cell, yielding 250 &mu;J optical pulses with 2.4 cycle duration at a 1 kHz repetition rate. This scheme can easily be adapted to generate ~6-cycle MIR pulses, to enable the generation of bright coherent soft x-ray supercontinua. 😄</p>
+
+          <h2>Experimental setup & results</h2>
+
+          <p>The laser system used for this experiment is a homebuilt OPCPA that delivers 3 &mu;m laser pulses, with a duration of 120 fs (12 cycle) and up to 800 &mu;J energy at 1 kHz repetition rate. Pulses enter and exit the multi-pass cell slightly off-axis through a hole in the substrate of two gold-coated concave spherical mirrors (f = 100 mm) placed ~350 mm apart that make up the multi-pass cell (Fig. 1). The beam reflects in a circular pattern, advancing by angle &theta; after each round trip before exiting on the opposite side it entered.</p>
+
+          <div class="singleimage">
+            <img src="">
+          </div>
+          <div class="projectcaption">
+            <p>Fig. 1. a) Experimental layout of the multi-pass cell featuring two gold coated f = 100 mm mirrors and a CaF2 plate placed at Brewster’s angle at the waist of the cavity. b) Circular reflection pattern of a HeNe laser in the multi-pass cell over 17.5 round trips, used for initial alignment.</p>
+          </div>
+
+          <p>On each reflection, the pulses pass through either a 0.5 mm or 1 mm thick calcium fluoride (CaF2) plate placed at Brewster’s angle at the waist of the cavity. An f = 50 cm lens placed before the multi-pass cell mode-matches the incoming beam with the cell. Chromatic dispersion and self-phase modulation (SPM) spectrally broaden and temporally compress the resonating pulses; self-focusing is mitigated as the nonlinear phase accumulation is spread over many passes.</p>
+
+          <p>We characterized the multi-pass cell output pulses using a homebuilt second harmonic generation frequency resolved optical gating (SHG-FROG) apparatus, and measured the spectrum using a commercial spectrometer operating over the 1.5-5 &mu;m spectral range and providing a spectral resolution of 30 nm.</p>
+
+          <p>Guided by our numerical simulations,[5] we first used a 1 mm thick CaF2 plate and set the multi-pass cell for 5.5 round trips through the cell. We achieved:</p>
+
+          <ul>
+            <li>62% throughput with input energy up to 400 &mu;J, resulting in 250 &mu;J compressed pulses ☀️</li>
+            <li>22 fs duration FWHM compressed pulses 💨</li>
+            <li>938 nm FWHM broadened spectrum 🌈</li>
+          </ul>
+
+          <p>Using a 0.5 mm plate and 7.5 round trips, we achieved:</p>
+
+          <ul>
+            <li>47% energy throughput ☀️</li>
+            <li>38 fs duration pulses 💨</li>
+            <li>815 nm spectral bandwidth 🌈</li>
+          </ul>
+
+          <div class="singleimage">
+            <img src="">
+          </div>
+          <div class="projectcaption">
+            <p>Fig. 2. Measured spatial and spectro-temporal properties of the self-compressed pulses. (Top left) Retrieved (blue line) temporal intensity profile from SHG-FROG measurement and measured spectrum (grey shaded) and spatial intensity profile at the cell output (inset); (top right) measured (grey shaded) and retrieved (blue line) spectra with retrieved spectral phase (red line); (bottom left), measured FROG trace; (bottom right) retrieved FROG trace.</p>
+          </div>
+
+          <h2>Conclusions & future work</h2>
+
+          <p>We demonstrated for the first time nonlinear self-compression in the mid-IR spectral range at the few hundreds of μJ energy level and produced 2.4 optical cycle pulses with a peak power of 11 GW!!! 😄 Future work can easily adapt this approach to generate ~6-cycle MIR pulses, to enable the generation of bright coherent soft x-ray supercontinua for broad applications in advanced spectro-microscopies.[7]</p>
+
+          <h2>References</h2>
+
+          <ol>
+            <li>C. Hernandez-Garcia et al., “Group velocity matching in high-order harmonic generation driven by MIR lasers”, N.J. Phys 18, 073031 (2016)</li>
+            <li>M. Nisoli et al., "Generation of high energy 10fs pulses by a new pulse compression technique," Appl Phys Lett 68, 2793 (1996).</li>
+            <li>J. Beetar et al., "Spectral broadening and pulse compression of a 400μJ, 20W Yb:KGW laser," Appl Phys Lett 112, 51102 (2018).</li>
+            <li>A.-L. Viotti et al., "Multi-pass cells for post-compression of ultrashort laser pulses," Optica 9, 197(2022).</li>
+            <li>D. Carlson et al., "Nonlinear post-compression in multi-pass cells in the mid-IR region using bulk materials," Opt Lett 47, 5289 (2022).</li>
+            <li>G. Jargot et al., "Self-compression in a multipass cell," Opt Lett 43, 5643 (2018).</li>
+            <li>A. Rana et al., “Direct observation of 3D topological spin textures and their interactions using soft x-ray vector ptychography,” Nature Nanotechnology 18, 227 (2023).</li>
+          </ol>
+
+        </div>
+
+      <div class="right">
+
+        <div class="project-tags">
+          <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/blue-sticker.png" style="position: absolute; margin: -20px 0px 0px 210px;">
+          <img src="https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/chatbox-stickers.png" style="position: absolute; margin: 50px 0px 0px 210px;">
+          <h3>Project Tags:</h3>
+          <ul style="list-style: none;">
+            <li>Physics</li>
+            <li>Optics</li>
+          </ul>
+        </div>
+
+      </div>
+    
+    </div>
+  </div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>&copy; 2023-2025 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
+</div>
+
+</body>
+</html>
