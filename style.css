@@ -7,6 +7,7 @@ body {
   background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/backgroundtiles.png");
 }
 
+/* set scroll bar colors */
 ::-webkit-scrollbar-track {
   background: #ffe5b4;
 }
@@ -103,7 +104,7 @@ a {color: #cd7722;} /* make the links a different color */
 .header {
   padding: 80px 50px;
   position: relative;
-  text-align: right;
+  text-align: left;
   background-image: url("https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/main/media/header.png");
   background-size: cover;
   color: #260a30;
@@ -446,6 +447,129 @@ a {color: #cd7722;} /* make the links a different color */
   }
 }
 
+/* TRAIN AREA ----------------- */
+.train-container { /* box to contain train animation to prevent clipping */
+  position: relative;
+  margin: 20px auto auto auto;
+  display: flex;
+  height: 110px;
+  overflow: hidden;
+  clip-path: rect(auto auto auto auto);
+}
+
+/* train animation */
+.train {
+  position: relative;
+  width: 100%;
+  height: 110px;
+  cursor: pointer;
+  animation-name: train;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: running;
+}
+
+.train:hover {
+  animation-play-state: paused;
+}
+
+.train img {
+  width: 100px;
+  position: absolute; /* prevents trains from stacking vertically, position specified via inline CSS */
+}
+
+@keyframes train {
+  0%  {left:100%;} /* animation starts at far right of screen */
+  100% {left:-900px;} /* moves as far left as 8*100px + 100px = 900px */
+}
+
+/* Popup container */
+.train-popup {
+  position: relative;
+  display: block;
+  width: 100%;
+  user-select: none;
+}
+
+/* The actual popup */
+.train-popup .train-content {
+  visibility: hidden;
+  width: 90%;
+  max-height: 500px;
+  overflow-y: scroll; /* add a vertical scroll bar */
+  margin-left: -45%; /* -50% aligns left, then add 1/2*(100%-width)=5% */
+  background-color: white;
+  border: 2px solid #ffd300; 
+  outline: 2px solid #260a30; /* outline goes just outside the border */
+  color: #260a30;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+/* popup top bar */
+.train-popup .train-content .popup-top-bar {
+  width: calc(100% - 4px); /* minus 4px for border */
+  height: 30px;
+  background-color: #fba45e;
+  border: 2px solid #260a30;
+}
+
+.train-popup .train-content .popup-top-bar h4 {
+  margin: 7px;
+}
+
+/* the close window button */
+.close-window {
+  position: absolute;
+  top: -3px;
+  left: 3px;
+  color: #260a30;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* on hover, the close window x turns a new color */
+.close-window:hover {
+  color: #f64252;
+  cursor: pointer;
+}
+
+/* open new window button */
+.train-popup .train-content .popup-top-bar a {
+  position: absolute;
+  top: -3px;
+  left: 30px;
+  color: #260a30;
+  font-size: 30px;
+  text-decoration: none;
+  font-weight: 1000;
+}
+
+/* on hover, the open window button turns a new color */
+.train-popup .train-content .popup-top-bar a:hover {
+  color: #13af89;
+}
+
+/* popup bottom section */
+.train-popup .train-content .popup-bottom {
+  width: calc(100% - 4px - 20px); /* minus 4px for border and 20px for padding */
+  height: auto;
+  padding: 0px 10px 10px 10px; /* t r b l */
+  border: 2px solid #260a30;
+  text-align: left;
+}
+
+/* END TRAIN AREA ---------------------- */
+
 /* Main page right sticky box */
 .box2 {
   position: relative;
@@ -754,6 +878,25 @@ a {color: #cd7722;} /* make the links a different color */
   font-family: 'Courier New', Courier, monospace;
 }
 /* End illustrations grid formatting */
+
+/* Train Car #2 gif grid */
+.gifgrid {
+  display: grid;
+  width: 100%;
+  height: calc(20%-50px);
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+/* Train Car #7 sticker grid */
+.stickergrid {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
 
 /* Contact page form */
 /* Expand text input boxes size */
