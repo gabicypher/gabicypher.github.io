@@ -7,31 +7,37 @@
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
+
+    <!-- emoji cursor trail -->
+    <script type="module">
+      import { emojiCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+      let cursorEffect = new emojiCursor({ emoji: [":3", ":D", ">:)", "❤️", "💛", "🎨", "💥", "💫", "🪐", "⭐️", "✨", "⚡️", "🌈", "☀️"] });
+    
+      function cursorTrailOff() {
+        document.getElementById("cursorBtn").innerHTML = "Turn on button";
+        cursorEffect.destroy();
+      }
+    </script>
+
     <h1>Welcome to my Website!</h1>
     
           <!-- hitwebcounter Code START -->
       <a href="https://www.hitwebcounter.com" target="_blank">
       <img src="https://hitwebcounter.com/counter/counter.php?page=10432105&style=0024&nbdigits=6&type=page&initCount=833" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a> 
       
+    <h3>Button to turn off emoji cursor trail:</h3>
+    
+    <button onclick="cursorTrailOff()" id="cursorBtn">Hashtag my button</button>
 
-    <p>This is a paragraph! Here's how you make a link: <a href="https://neocities.org">Neocities</a>.</p>
 
-    <p>Here's how you can make <strong>bold</strong> and <em>italic</em> text.</p>
-
-    <p>Here's how you can add an image:</p>
-    <img src="/neocities.png">
-
-    <p>Here's how to make a list:</p>
-
-    <ul>
-      <li>First thing</li>
-      <li>Second thing</li>
-      <li>Third thing</li>
-    </ul>
-
-    <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
+    <script>
+      function cursorTrailOff() {
+        document.getElementById("cursorBtn").innerHTML = "Turn on button";
+        cursorEffect.destroy();
+      }
+    </script>
   </body>
 </html>
