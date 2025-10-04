@@ -619,7 +619,7 @@ a {color: #cd7722;} /* make the links a different color */
 .grid-item{
   background-color: #f8de7f; /* box color */
   text-align: center;
-  border-radius: 40px 0 40px 0; /* round corners 1, 3 */
+  border-radius: 20px 0 20px 0; /* round corners 1, 3 */
   overflow: hidden;
   transition: 0.3s; /* transition back from hover */
 }
@@ -627,9 +627,9 @@ a {color: #cd7722;} /* make the links a different color */
 .grid-item:hover {
   transition: 0.3s;
   background-color: #f6a79d; /* box color */
-  border-radius: 0 40px 0 40px; /* round corners 2, 4 */
+  border-radius: 0 20px 0 20px; /* round corners 2, 4 */
   img { /* on whole box hover, image crops differently */
-    border-radius: 0 40px 0 0;
+    border-radius: 0 20px 0 0;
     transition: 0.3s;
     transform: scale(1.05); /* zoom image on hover */
   }
@@ -657,7 +657,7 @@ a {color: #cd7722;} /* make the links a different color */
 .grid-item img {
   width: 100%;
   max-width: 100%;
-  border-radius: 40px 0 0 0; /* round upper left corner */
+  border-radius: 20px 0 0 0; /* round upper left corner */
   transition: 0.3s; /* transition back from hover */
 }
 
@@ -881,6 +881,24 @@ a {color: #cd7722;} /* make the links a different color */
   font-family: 'Courier New', Courier, monospace;
 }
 /* End illustrations grid formatting */
+
+/* Art Archive projects page */
+.art-archive-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* images kick down to next line if too many */
+}
+
+.art-archive-grid img {
+  object-fit: cover;
+  width: 33%;
+  aspect-ratio: 1/1;
+  margin: 0.1%;
+}
+
+.art-archive-grid img:hover {
+  object-fit: contain; /* on click, zoom out to show full image */
+}
 
 /* Random art generator formatting */
 .art-tv {
