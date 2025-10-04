@@ -836,12 +836,15 @@ a {color: #cd7722;} /* make the links a different color */
 /* Code snippet formatting */
 .code-snippet {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  background-color: rgb(93, 218, 203, 0.7);
+  font-weight: 600;
+  color: white;
+  background-color:  #260a30;
+  border-radius: 7px; /* round corners */
+  padding: 10px;
 }
 
 .code-snippet p {
-  padding: 5px 20px 5px 20px; /* t r b l*/
+  margin: 0;
 }
 
 /* Illustrations grid formatting */
@@ -878,6 +881,38 @@ a {color: #cd7722;} /* make the links a different color */
   font-family: 'Courier New', Courier, monospace;
 }
 /* End illustrations grid formatting */
+
+/* Random art generator formatting */
+.art-tv {
+  background-color: #f9a602;
+  width: 288px;
+}
+
+.art-tv h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.bottom-art-tv {
+  display: flex; /* display button and image horizontally next to one another */
+  align-items: flex-start; /* align items at the top together (prevent button shifting between images) */
+}
+
+.shuffle-button {
+  border: none;
+  padding: 0;
+  margin: 20px 0 0 20px; /* trbl */
+  background-color: inherit;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.random-art img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-left: 20px;
+}
 
 /* Train Car #2 gif grid */
 .gifgrid {
