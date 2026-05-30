@@ -475,7 +475,7 @@
 
           <!-- Pull JS to run the train popup from the train.js file, lazy load as module-->
           <!-- REMEMBER TO ADD BACK IN MODULE TAG WHEN PUSHING TO ORIGIN -->
-          <script src="js/train.js"></script>
+          <script type="module" src="js/train.js"></script>
 
           <h1>Physics</h1>
 
@@ -641,7 +641,7 @@
             </div>
         </div>
 
-        <audio src="https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/regen.mp3?raw=true" id="audio" autoplay="true"></audio>
+        <audio src="https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/skylight.mp3?raw=true" id="audio" autoplay="true"></audio>
 
         <!-- Navigation buttons, no hover -->
         <!-- Make these buttons useless by tossing on a 1, because the hover buttons are used -->
@@ -716,9 +716,8 @@
   </div>
 
 <!-- Footer -->
-<div class="footer">
-  <p>&copy; 2023-2025 Gabi Seifert. Website made entirely from scratch with HTML, CSS, and a dash of Javascript.</p>
-</div>
+<div class="footer"></div>
+  <script src="js/footer.js"></script>
 
 <!-- JS for music player and typo -->
 <script>
@@ -742,85 +741,53 @@
   var songlist = {
                   "songs": [
                   {
-                      "name": "Nur Geträumt",
-                      "artist": "Nena",
-                      "album": "Nena",
-                      "duration": "03:42",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/nur-getraumt.mp3?raw=true",
-                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/nur-getraumt.jpg"
+                      "name": "Skylight",
+                      "artist": "Pinegrove",
+                      "album": "Pinegrove",
+                      "duration": "04:19",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/skylight.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/skylight.jpg"
                   },
                   {
-                      "name": "Ramona",
-                      "artist": "Guster",
-                      "album": "Keep It Together",
-                      "duration": "03:06",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/ramona.mp3?raw=true",
-                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/guster-keep-it-together.jpg"
+                      "name": "Fireflies",
+                      "artist": "Owl City",
+                      "album": "Ocean Eyes",
+                      "duration": "03:48",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/fireflies.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/fireflies.jpg"
                   },
                   {
-                      "name": "Blue Thunder",
-                      "artist": "Galaxie 500",
-                      "album": "On Fire",
-                      "duration": "03:49",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/blue-thunder.mp3?raw=true",
-                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/blue-thunder.jpg"
+                      "name": "Mosquitoes",
+                      "artist": "The Beths",
+                      "album": "Straight Line Was a Lie",
+                      "duration": "04:43",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/mosquitoes.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/mosquitoes.jpg"
                   },
                   {
-                      "name": "Come Downstairs and Say Hello",
-                      "artist": "Guster",
-                      "album": "Keep It Together",
-                      "duration": "05:16",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/come-downstairs.mp3?raw=true",
-                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/guster-keep-it-together.jpg"
-                  },
-                  {
-                      "name": "Merry Christmas, Please Don't Call",
-                      "artist": "Bleachers",
+                      "name": "Please Please Please",
+                      "artist": "The Dream Academy",
                       "album": "Single",
-                      "duration": "03:19",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/merry-christmas.mp3?raw=true",
-                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/merry-christmas.jpg"
+                      "duration": "03:12",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/please-please-please.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/please-please-please.jpg"
                   },
                   {
-                      "name": "Regen",
-                      "artist": "01099",
-                      "album": "Altbau",
-                      "duration": "02:40",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/regen.mp3?raw=true",
-                      "cover_art_url": "https://i.imgur.com/cOGrLba.jpg"
+                      "name": "Graceland Too",
+                      "artist": "Phoebe Bridgers",
+                      "album": "Punisher",
+                      "duration": "03:56",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/graceland-too.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/graceland-too.jpg"
                   },
                   {
-                      "name": "Marx and Engels",
-                      "artist": "Belle and Sebastian",
-                      "album": "Push bar man",
-                      "duration": "03:45",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/marx-and-engels.mp3?raw=true",
-                      "cover_art_url": "https://i.imgur.com/WoxEEF5.jpg"
+                      "name": "Pink Moon",
+                      "artist": "Nick Drake",
+                      "album": "Pink Moon",
+                      "duration": "02:04",
+                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/pink-moon.mp3?raw=true",
+                      "cover_art_url": "https://raw.githubusercontent.com/gabicypher/gabicypher.github.io/refs/heads/main/media/music-player/album-covers/pink-moon.jpg"
                   },
-                  {
-                      "name": "Skin",
-                      "artist": "Allison Ponthier",
-                      "album": "Breaking the Fourth Wall",
-                      "duration": "03:35",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/skin.mp3?raw=true",
-                      "cover_art_url": "https://i.imgur.com/CeRNh38.jpg"
-                  },
-                  {
-                      "name": "Clementine",
-                      "artist": "The Decemberists",
-                      "album": "Castaways and Cutouts",
-                      "duration": "04:07",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/clementine.mp3?raw=true",
-                      "cover_art_url": "https://i.imgur.com/TtD94EN.jpg"
-                  },
-                  {
-                      "name": "Aoi Shiori",
-                      "artist": "Galileo Galilei",
-                      "album": "Portal",
-                      "duration": "05:37",
-                      "url": "https://github.com/gabicypher/gabicypher.github.io/blob/main/media/music-player/songs/aoi-shiori.mp3?raw=true",
-                      "cover_art_url": "https://i.imgur.com/ICF5hT2.jpg"
-                  }
                   ]
                 };
   
