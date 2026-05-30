@@ -47,7 +47,7 @@ const s_fixRarebitIndexPage = false; // If using Rarebit, change to true to make
 const s_wordFilterOn = true; // True for on, false for off
 const s_filterReplacement = '****'; // Change what filtered words are censored with (**** is the default)
 const s_filteredWords = [ // Add words to filter by putting them in quotes and separating with commas (ie. 'heck', 'dang')
-    'arse', 'ass', 'bastard', 'beaner', 'bitch', 'biatch', 'blowjob', 'blow job', 'bollock', 'bollok', 'boner', 'cock', 'coon', 'cunt', 'damn', 'dick', 'dildo', 'dyke', 'fag', 'faggot', 'feck', 'fellate', 'fellatio', 'felching', 'fuck', 'f u c k', 'fudgepacker', 'fudge packer', 'flange', 'jizz', 'keyword', 'keywords', 'kike', 'knobend', 'muff', 'nigger', 'nigga', 'penis', 'prick', 'pube', 'scrotum', 'shit', 's hit', 'sh1t', 'slut', 'slutty', 'smegma', 'spunk', 'turd', 'wank', 'whore'
+    'arse', 'ass', 'bastard', 'beaner', 'bitch', 'biatch', 'blowjob', 'blow job', 'bollock', 'bollok', 'boner', 'cock', 'coon', 'cunt', 'dick', 'dildo', 'dyke', 'fag', 'faggot', 'feck', 'fellate', 'fellatio', 'felching', 'fuck', 'f u c k', 'fudgepacker', 'fudge packer', 'flange', 'jizz', 'kike', 'knobend', 'muff', 'nigger', 'nigga', 'penis', 'prick', 'pube', 'scrotum', 'shit', 's hit', 'sh1t', 'slut', 'slutty', 'smegma', 'spunk', 'turd', 'wank', 'whore'
 ]
 
 // Text - Change what messages/text appear on the form and in the comments section (Mostly self explanatory)
